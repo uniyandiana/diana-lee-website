@@ -158,7 +158,7 @@ export default function About() {
                   <p className="text-[#6b7280] text-sm">{t('about.qualifications.education.ma')}</p>
                 </div>
                 <div className="border-l-4 border-[#5A9AB4] pl-4">
-                  <p className="text-[#6b7280] text-sm">The Professional Certificate in Career Development Facilitation</p>
+                  <p className="text-[#6b7280] text-sm">{t('about.qualifications.certifications.careerDevCert')}</p>
                 </div>
               </div>
             </div>
@@ -184,23 +184,23 @@ export default function About() {
             {/* Awards */}
             <div className="bg-[#F7F9F9] p-8 rounded-xl">
               <h3 className="text-xl font-bold text-[#5A9AB4] mb-6 text-center flex items-center justify-center gap-2">
-                <span className="text-2xl">🌟</span> Awards
+                <span className="text-2xl">🌟</span> {t('about.qualifications.awards.title')}
               </h3>
               <div className="space-y-4">
                 <div className="border-l-4 border-[#5A9AB4] pl-4">
                   <p className="text-[#6b7280] text-sm">Enterprise Summer Scholarship 2025, UK</p>
                 </div>
                 <div className="border-l-4 border-[#5A9AB4] pl-4">
-                  <p className="text-[#6b7280] text-sm">Eastern District Outstanding Youth Award Scheme, HK</p>
+                  <p className="text-[#6b7280] text-sm">{t('about.qualifications.awards.easternDistrict')}</p>
                 </div>
                 <div className="border-l-4 border-[#5A9AB4] pl-4">
-                  <p className="text-[#6b7280] text-sm">Outstanding Service Awards for Tertiary Students, HK</p>
+                  <p className="text-[#6b7280] text-sm">{t('about.qualifications.awards.outstandingService')}</p>
                 </div>
                 <div className="border-l-4 border-[#5A9AB4] pl-4">
-                  <p className="text-[#6b7280] text-sm">Rotary Youth Leadership Awards, HK</p>
+                  <p className="text-[#6b7280] text-sm">{t('about.qualifications.awards.rotary')}</p>
                 </div>
                 <div className="border-l-4 border-[#5A9AB4] pl-4">
-                  <p className="text-[#6b7280] text-sm">University Service Scholarship, HK</p>
+                  <p className="text-[#6b7280] text-sm">{t('about.qualifications.awards.universityScholarship')}</p>
                 </div>
               </div>
             </div>
