@@ -270,7 +270,7 @@ export default function Services() {
       {/* My Exposure */}
       <section className="py-12 md:py-16 bg-white">
         <div className="container-custom">
-          <h2 className="text-center mb-12 text-[#5A9AB4]">My Exposure</h2>
+          <h2 className="text-center mb-12 text-[#5A9AB4]">{t('services.myExposure.title')}</h2>
           <ExposureGallery items={exposureItems} />
         </div>
       </section>

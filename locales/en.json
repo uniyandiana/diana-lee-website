@@ -241,5 +241,14 @@
       "responseTitle": "Response Time",
       "responseText": "I typically respond to inquiries within 2-3 business days. For urgent matters, please indicate this in your message subject."
     }
+  },
+  "footer": {
+    "roles": "Career Development Facilitator • Enterprise Educator • Social Innovator",
+    "tagline": "Empowering individuals to turn ideas into impact through career clarity and enterprise education.",
+    "quickLinks": "Quick Links",
+    "connect": "Connect",
+    "email": "Email",
+    "privacy": "Privacy Policy",
+    "rights": "All rights reserved."
   }
 }

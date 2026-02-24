@@ -1,7 +1,11 @@
+'use client';
+
 import Link from "next/link";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const { t } = useLanguage();
 
   return (
     <footer className="bg-[#1f2937] text-white">
@@ -11,28 +15,28 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-2">
             <h3 className="text-xl font-bold mb-4 text-[#F7F9F9]">Diana Lee</h3>
             <p className="text-gray-300 mb-4">
-              <span className="whitespace-nowrap">Career Development Facilitator</span> • <span className="whitespace-nowrap">Enterprise Educator</span> • <span className="whitespace-nowrap">Social Innovator</span>
+              {t('footer.roles')}
             </p>
             <p className="text-gray-400 text-sm">
-              Empowering individuals to turn ideas into impact through career clarity and enterprise education.
+              {t('footer.tagline')}
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-[#F7F9F9]">Quick Links</h4>
+            <h4 className="text-lg font-semibold mb-4 text-[#F7F9F9]">{t('footer.quickLinks')}</h4>
             <ul className="space-y-2">
-              <li><Link href="/" className="text-gray-300 hover:text-[#5A9AB4] transition-colors">Home</Link></li>
-              <li><Link href="/about" className="text-gray-300 hover:text-[#5A9AB4] transition-colors">About</Link></li>
-              <li><Link href="/services" className="text-gray-300 hover:text-[#5A9AB4] transition-colors">Services</Link></li>
-              <li><Link href="/resources" className="text-gray-300 hover:text-[#5A9AB4] transition-colors">Resources</Link></li>
-              <li><Link href="/contact" className="text-gray-300 hover:text-[#5A9AB4] transition-colors">Contact</Link></li>
+              <li><Link href="/" className="text-gray-300 hover:text-[#5A9AB4] transition-colors">{t('nav.home')}</Link></li>
+              <li><Link href="/about" className="text-gray-300 hover:text-[#5A9AB4] transition-colors">{t('nav.about')}</Link></li>
+              <li><Link href="/services" className="text-gray-300 hover:text-[#5A9AB4] transition-colors">{t('nav.services')}</Link></li>
+              <li><Link href="/resources" className="text-gray-300 hover:text-[#5A9AB4] transition-colors">{t('nav.resources')}</Link></li>
+              <li><Link href="/contact" className="text-gray-300 hover:text-[#5A9AB4] transition-colors">{t('nav.contact')}</Link></li>
             </ul>
           </div>
 
           {/* Connect */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-[#F7F9F9]">Connect</h4>
+            <h4 className="text-lg font-semibold mb-4 text-[#F7F9F9]">{t('footer.connect')}</h4>
             <ul className="space-y-3">
               <li>
                 <a
@@ -81,7 +85,7 @@ export default function Footer() {
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                   </svg>
-                  Email
+                  {t('footer.email')}
                 </a>
               </li>
             </ul>
@@ -91,11 +95,11 @@ export default function Footer() {
         <div className="border-t border-gray-700 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm">
-              © {currentYear} Diana Lee. All rights reserved.
+              © {currentYear} Diana Lee. {t('footer.rights')}
             </p>
             <div className="flex gap-4 text-sm">
               <Link href="/privacy" className="text-gray-400 hover:text-[#5A9AB4] transition-colors">
-                Privacy Policy
+                {t('footer.privacy')}
               </Link>
             </div>
           </div>

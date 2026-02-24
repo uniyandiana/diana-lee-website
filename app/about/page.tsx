@@ -39,7 +39,7 @@ export default function About() {
               </p>
 
               <p className="text-lg text-[#1f2937]">
-                {t('about.hero.roles')}
+                {renderWithBreaks('about.hero.roles')}
               </p>
             </div>
             <div className="order-1 md:order-2">
@@ -121,6 +121,14 @@ export default function About() {
                     </a>
                   </h4>
                   <p className="text-[#6b7280] text-sm">{t('about.experience.lavioletDesc')}</p>
+                </div>
+                <div className="border-l-4 border-[#5A9AB4] pl-6">
+                  <h4 className="font-bold text-[#1f2937] text-base mb-2">
+                    <a href="https://www.rthk.hk/" target="_blank" rel="noopener noreferrer" className="hover:text-[#5A9AB4] transition-colors">
+                      {t('about.experience.rthk')}
+                    </a>
+                  </h4>
+                  <p className="text-[#6b7280] text-sm">{t('about.experience.rthkDesc')}</p>
                 </div>
               </div>
             </div>
