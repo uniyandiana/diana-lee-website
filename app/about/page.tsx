@@ -24,7 +24,7 @@ export default function About() {
   return (
     <div>
       {/* Hero */}
-      <section className="section-padding bg-gradient-to-br from-[#F7F9F9] to-[#FFFEFA]">
+      <section className="section-padding bg-gradient-to-br from-[#C9F0EF] to-[#FAF5EC]">
         <div className="container-custom max-w-6xl">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="order-2 md:order-1">
