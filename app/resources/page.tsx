@@ -2,6 +2,7 @@ import Link from "next/link";
 import { sanityFetch } from "@/lib/sanity";
 import { getAllBlogPosts } from "@/lib/blog";
 import ResourcesHero from "@/components/ResourcesHero";
+import InstagramFeed from "@/components/InstagramFeed";
 
 export const metadata = {
   title: "Resources & Blog | Diana Lee",
@@ -137,6 +138,9 @@ export default async function Resources() {
           </div>
         </div>
       </section>
+
+      {/* Instagram Feed */}
+      <InstagramFeed />
 
       {/* Resources */}
       <section className="section-padding bg-[#FFFEFA]">
