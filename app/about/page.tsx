@@ -43,14 +43,15 @@ export default function About() {
               </p>
             </div>
             <div className="order-1 md:order-2">
-              <Image
-                src="/images/Diana Lee - Professional Portrait (Oxford Reuben College).jpg"
-                alt="Diana Lee at Oxford Reuben College"
-                width={500}
-                height={600}
-                className="rounded-2xl shadow-lg w-full h-auto"
-                priority
-              />
+              <div className="relative w-full h-[400px]">
+                <Image
+                  src="/images/Diana Lee - Professional Portrait (Oxford Reuben College).jpg"
+                  alt="Diana Lee at Oxford Reuben College"
+                  fill
+                  className="rounded-2xl shadow-lg object-cover"
+                  priority
+                />
+              </div>
             </div>
           </div>
         </div>
