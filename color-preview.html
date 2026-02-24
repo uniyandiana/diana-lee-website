@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Palette Preview - Diana Lee</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f9fafb;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .header h1 {
+      font-size: 40px;
+      color: #111827;
+      margin-bottom: 12px;
+    }
+    .header p {
+      font-size: 20px;
+      color: #6b7280;
+    }
+    .palette {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+      margin-bottom: 60px;
+      overflow: hidden;
+    }
+    .palette-header {
+      padding: 32px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .palette-name {
+      font-size: 28px;
+      font-weight: bold;
+      color: #111827;
+      margin-bottom: 8px;
+    }
+    .palette-desc {
+      font-size: 18px;
+      color: #6b7280;
+      margin-bottom: 4px;
+    }
+    .palette-vibe {
+      font-size: 14px;
+      font-style: italic;
+      color: #9ca3af;
+    }
+    .palette-body {
+      padding: 32px;
+    }
+    .section-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    .swatches {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    .swatch {
+      text-align: center;
+    }
+    .swatch-color {
+      height: 100px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 8px;
+    }
+    .swatch-label {
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    .swatch-hex {
+      font-size: 11px;
+      font-family: monospace;
+    }
+    .buttons {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      border: none;
+    }
+    .btn-primary {
+      color: white;
+    }
+    .btn-secondary {
+      border: 2px solid;
+      background: transparent;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    .card {
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+    .card p {
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+    .card a {
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .hero {
+      padding: 60px 32px;
+      border-radius: 16px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 32px;
+    }
+    .hero .buttons {
+      justify-content: center;
+    }
+    .choice {
+      background: #f3f4f6;
+      padding: 24px;
+      text-align: center;
+      font-size: 18px;
+    }
+    .choice strong {
+      color: #059669;
+      font-size: 20px;
+    }
+    .tag {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .final-cta {
+      background: linear-gradient(135deg, #7c3aed 0%, #2563eb 100%);
+      color: white;
+      padding: 48px 32px;
+      border-radius: 16px;
+      text-align: center;
+      margin-top: 60px;
+    }
+    .final-cta h2 {
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+    .final-cta p {
+      font-size: 18px;
+      opacity: 0.95;
+      margin-bottom: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🎨 Color Palette Options</h1>
+      <p>Preview each option to see what resonates with you</p>
+    </div>
+
+    <!-- Option 1: Clean Minimal -->
+    <div class="palette">
+      <div class="palette-header">
+        <div class="palette-name">Option 1: Clean Minimal (More White)</div>
+        <div class="palette-desc">Professional, airy, with subtle warm accents</div>
+        <div class="palette-vibe">Vibe: Clean, professional, minimal with warmth</div>
+      </div>
+      <div class="palette-body" style="background: #FEFBF7;">
+        <div class="section-title" style="color: #2A2A2A;">Color Swatches</div>
+        <div class="swatches">
+          <div class="swatch">
+            <div class="swatch-color" style="background: #9B8B7E;"></div>
+            <div class="swatch-label" style="color: #2A2A2A;">Primary</div>
+            <div class="swatch-hex" style="color: #6B6B6B;">#9B8B7E</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #E8DDD3;"></div>
+            <div class="swatch-label" style="color: #2A2A2A;">Secondary</div>
+            <div class="swatch-hex" style="color: #6B6B6B;">#E8DDD3</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #C9A88A;"></div>
+            <div class="swatch-label" style="color: #2A2A2A;">Accent</div>
+            <div class="swatch-hex" style="color: #6B6B6B;">#C9A88A</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #FEFBF7; border: 1px solid #ddd;"></div>
+            <div class="swatch-label" style="color: #2A2A2A;">Background</div>
+            <div class="swatch-hex" style="color: #6B6B6B;">#FEFBF7</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #2A2A2A;"></div>
+            <div class="swatch-label" style="color: #2A2A2A;">Text Primary</div>
+            <div class="swatch-hex" style="color: #6B6B6B;">#2A2A2A</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #6B6B6B;"></div>
+            <div class="swatch-label" style="color: #2A2A2A;">Text Secondary</div>
+            <div class="swatch-hex" style="color: #6B6B6B;">#6B6B6B</div>
+          </div>
+        </div>
+
+        <div class="section-title" style="color: #2A2A2A;">Buttons</div>
+        <div class="buttons">
+          <button class="btn btn-primary" style="background: #9B8B7E;">Primary Button</button>
+          <button class="btn btn-secondary" style="color: #9B8B7E; border-color: #9B8B7E;">Secondary Button</button>
+        </div>
+
+        <div class="section-title" style="color: #2A2A2A;">Content Example</div>
+        <div class="cards">
+          <div class="card" style="background: #E8DDD3;">
+            <h3 style="color: #2A2A2A;">Career Development Workshop</h3>
+            <p style="color: #6B6B6B;">Interactive session helping participants gain career clarity through personality-based insights.</p>
+            <a href="#" style="color: #9B8B7E;">Learn More →</a>
+          </div>
+          <div class="card" style="background: white;">
+            <div class="tag" style="background: #E8DDD3; color: #2A2A2A;">Entrepreneurship</div>
+            <h3 style="color: #2A2A2A;">Startup Fundamentals</h3>
+            <p style="color: #6B6B6B;">Learn the essentials of building a startup from idea validation to market launch.</p>
+          </div>
+        </div>
+
+        <div class="section-title" style="color: #2A2A2A;">Hero Section Example</div>
+        <div class="hero" style="background: linear-gradient(135deg, #E8DDD3 0%, #FEFBF7 100%);">
+          <h1 style="color: #2A2A2A;">Empowering individuals to turn ideas into <span style="color: #9B8B7E;">impact</span></h1>
+          <p style="color: #6B6B6B;">Through career clarity, enterprise education, and the courage to act.</p>
+          <div class="buttons">
+            <button class="btn btn-primary" style="background: #9B8B7E;">Explore Services</button>
+            <button class="btn btn-secondary" style="color: #9B8B7E; border-color: #9B8B7E; background: transparent;">Read My Story</button>
+          </div>
+        </div>
+      </div>
+      <div class="choice">
+        <p>Like this option? Choose <strong>Option 1</strong></p>
+      </div>
+    </div>
+
+    <!-- Option 2: Sage & Cream -->
+    <div class="palette">
+      <div class="palette-header">
+        <div class="palette-name">Option 2: Sage & Cream</div>
+        <div class="palette-desc">Calming, nature-inspired, sophisticated</div>
+        <div class="palette-vibe">Vibe: Calm, professional, trustworthy</div>
+      </div>
+      <div class="palette-body" style="background: #FFFEF9;">
+        <div class="section-title" style="color: #333333;">Color Swatches</div>
+        <div class="swatches">
+          <div class="swatch">
+            <div class="swatch-color" style="background: #A4B8A4;"></div>
+            <div class="swatch-label" style="color: #333333;">Primary</div>
+            <div class="swatch-hex" style="color: #707070;">#A4B8A4</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #F5F1E8;"></div>
+            <div class="swatch-label" style="color: #333333;">Secondary</div>
+            <div class="swatch-hex" style="color: #707070;">#F5F1E8</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #7D8E7D;"></div>
+            <div class="swatch-label" style="color: #333333;">Accent</div>
+            <div class="swatch-hex" style="color: #707070;">#7D8E7D</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #FFFEF9; border: 1px solid #ddd;"></div>
+            <div class="swatch-label" style="color: #333333;">Background</div>
+            <div class="swatch-hex" style="color: #707070;">#FFFEF9</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #333333;"></div>
+            <div class="swatch-label" style="color: #333333;">Text Primary</div>
+            <div class="swatch-hex" style="color: #707070;">#333333</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #707070;"></div>
+            <div class="swatch-label" style="color: #333333;">Text Secondary</div>
+            <div class="swatch-hex" style="color: #707070;">#707070</div>
+          </div>
+        </div>
+
+        <div class="section-title" style="color: #333333;">Buttons</div>
+        <div class="buttons">
+          <button class="btn btn-primary" style="background: #A4B8A4;">Primary Button</button>
+          <button class="btn btn-secondary" style="color: #A4B8A4; border-color: #A4B8A4;">Secondary Button</button>
+        </div>
+
+        <div class="section-title" style="color: #333333;">Content Example</div>
+        <div class="cards">
+          <div class="card" style="background: #F5F1E8;">
+            <h3 style="color: #333333;">Career Development Workshop</h3>
+            <p style="color: #707070;">Interactive session helping participants gain career clarity through personality-based insights.</p>
+            <a href="#" style="color: #A4B8A4;">Learn More →</a>
+          </div>
+          <div class="card" style="background: white;">
+            <div class="tag" style="background: #F5F1E8; color: #333333;">Entrepreneurship</div>
+            <h3 style="color: #333333;">Startup Fundamentals</h3>
+            <p style="color: #707070;">Learn the essentials of building a startup from idea validation to market launch.</p>
+          </div>
+        </div>
+
+        <div class="section-title" style="color: #333333;">Hero Section Example</div>
+        <div class="hero" style="background: linear-gradient(135deg, #F5F1E8 0%, #FFFEF9 100%);">
+          <h1 style="color: #333333;">Empowering individuals to turn ideas into <span style="color: #A4B8A4;">impact</span></h1>
+          <p style="color: #707070;">Through career clarity, enterprise education, and the courage to act.</p>
+          <div class="buttons">
+            <button class="btn btn-primary" style="background: #A4B8A4;">Explore Services</button>
+            <button class="btn btn-secondary" style="color: #A4B8A4; border-color: #A4B8A4; background: transparent;">Read My Story</button>
+          </div>
+        </div>
+      </div>
+      <div class="choice">
+        <p>Like this option? Choose <strong>Option 2</strong></p>
+      </div>
+    </div>
+
+    <!-- Option 3: Soft Blush & Taupe -->
+    <div class="palette">
+      <div class="palette-header">
+        <div class="palette-name">Option 3: Soft Blush & Taupe</div>
+        <div class="palette-desc">Warm, approachable, elegant</div>
+        <div class="palette-vibe">Vibe: Approachable, warm, feminine elegance</div>
+      </div>
+      <div class="palette-body" style="background: #FEFCFA;">
+        <div class="section-title" style="color: #333333;">Color Swatches</div>
+        <div class="swatches">
+          <div class="swatch">
+            <div class="swatch-color" style="background: #D4A5A5;"></div>
+            <div class="swatch-label" style="color: #333333;">Primary</div>
+            <div class="swatch-hex" style="color: #6A6A6A;">#D4A5A5</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #E6DDD3;"></div>
+            <div class="swatch-label" style="color: #333333;">Secondary</div>
+            <div class="swatch-hex" style="color: #6A6A6A;">#E6DDD3</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #B38989;"></div>
+            <div class="swatch-label" style="color: #333333;">Accent</div>
+            <div class="swatch-hex" style="color: #6A6A6A;">#B38989</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #FEFCFA; border: 1px solid #ddd;"></div>
+            <div class="swatch-label" style="color: #333333;">Background</div>
+            <div class="swatch-hex" style="color: #6A6A6A;">#FEFCFA</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #333333;"></div>
+            <div class="swatch-label" style="color: #333333;">Text Primary</div>
+            <div class="swatch-hex" style="color: #6A6A6A;">#333333</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #6A6A6A;"></div>
+            <div class="swatch-label" style="color: #333333;">Text Secondary</div>
+            <div class="swatch-hex" style="color: #6A6A6A;">#6A6A6A</div>
+          </div>
+        </div>
+
+        <div class="section-title" style="color: #333333;">Buttons</div>
+        <div class="buttons">
+          <button class="btn btn-primary" style="background: #D4A5A5;">Primary Button</button>
+          <button class="btn btn-secondary" style="color: #D4A5A5; border-color: #D4A5A5;">Secondary Button</button>
+        </div>
+
+        <div class="section-title" style="color: #333333;">Content Example</div>
+        <div class="cards">
+          <div class="card" style="background: #E6DDD3;">
+            <h3 style="color: #333333;">Career Development Workshop</h3>
+            <p style="color: #6A6A6A;">Interactive session helping participants gain career clarity through personality-based insights.</p>
+            <a href="#" style="color: #D4A5A5;">Learn More →</a>
+          </div>
+          <div class="card" style="background: white;">
+            <div class="tag" style="background: #E6DDD3; color: #333333;">Entrepreneurship</div>
+            <h3 style="color: #333333;">Startup Fundamentals</h3>
+            <p style="color: #6A6A6A;">Learn the essentials of building a startup from idea validation to market launch.</p>
+          </div>
+        </div>
+
+        <div class="section-title" style="color: #333333;">Hero Section Example</div>
+        <div class="hero" style="background: linear-gradient(135deg, #E6DDD3 0%, #FEFCFA 100%);">
+          <h1 style="color: #333333;">Empowering individuals to turn ideas into <span style="color: #D4A5A5;">impact</span></h1>
+          <p style="color: #6A6A6A;">Through career clarity, enterprise education, and the courage to act.</p>
+          <div class="buttons">
+            <button class="btn btn-primary" style="background: #D4A5A5;">Explore Services</button>
+            <button class="btn btn-secondary" style="color: #D4A5A5; border-color: #D4A5A5; background: transparent;">Read My Story</button>
+          </div>
+        </div>
+      </div>
+      <div class="choice">
+        <p>Like this option? Choose <strong>Option 3</strong></p>
+      </div>
+    </div>
+
+    <!-- Option 4: Modern Neutral -->
+    <div class="palette">
+      <div class="palette-header">
+        <div class="palette-name">Option 4: Modern Neutral (Very Minimal)</div>
+        <div class="palette-desc">Ultra-clean, professional, subtle warmth</div>
+        <div class="palette-vibe">Vibe: Clean, modern, professional, subtle</div>
+      </div>
+      <div class="palette-body" style="background: #FFFFFF;">
+        <div class="section-title" style="color: #1A1A1A;">Color Swatches</div>
+        <div class="swatches">
+          <div class="swatch">
+            <div class="swatch-color" style="background: #C4A57B;"></div>
+            <div class="swatch-label" style="color: #1A1A1A;">Primary</div>
+            <div class="swatch-hex" style="color: #5A5A5A;">#C4A57B</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #F2EEEA;"></div>
+            <div class="swatch-label" style="color: #1A1A1A;">Secondary</div>
+            <div class="swatch-hex" style="color: #5A5A5A;">#F2EEEA</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #A68B68;"></div>
+            <div class="swatch-label" style="color: #1A1A1A;">Accent</div>
+            <div class="swatch-hex" style="color: #5A5A5A;">#A68B68</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #FFFFFF; border: 1px solid #ddd;"></div>
+            <div class="swatch-label" style="color: #1A1A1A;">Background</div>
+            <div class="swatch-hex" style="color: #5A5A5A;">#FFFFFF</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #1A1A1A;"></div>
+            <div class="swatch-label" style="color: #1A1A1A;">Text Primary</div>
+            <div class="swatch-hex" style="color: #5A5A5A;">#1A1A1A</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #5A5A5A;"></div>
+            <div class="swatch-label" style="color: #1A1A1A;">Text Secondary</div>
+            <div class="swatch-hex" style="color: #5A5A5A;">#5A5A5A</div>
+          </div>
+        </div>
+
+        <div class="section-title" style="color: #1A1A1A;">Buttons</div>
+        <div class="buttons">
+          <button class="btn btn-primary" style="background: #C4A57B;">Primary Button</button>
+          <button class="btn btn-secondary" style="color: #C4A57B; border-color: #C4A57B;">Secondary Button</button>
+        </div>
+
+        <div class="section-title" style="color: #1A1A1A;">Content Example</div>
+        <div class="cards">
+          <div class="card" style="background: #F2EEEA;">
+            <h3 style="color: #1A1A1A;">Career Development Workshop</h3>
+            <p style="color: #5A5A5A;">Interactive session helping participants gain career clarity through personality-based insights.</p>
+            <a href="#" style="color: #C4A57B;">Learn More →</a>
+          </div>
+          <div class="card" style="background: white; border: 1px solid #F2EEEA;">
+            <div class="tag" style="background: #F2EEEA; color: #1A1A1A;">Entrepreneurship</div>
+            <h3 style="color: #1A1A1A;">Startup Fundamentals</h3>
+            <p style="color: #5A5A5A;">Learn the essentials of building a startup from idea validation to market launch.</p>
+          </div>
+        </div>
+
+        <div class="section-title" style="color: #1A1A1A;">Hero Section Example</div>
+        <div class="hero" style="background: linear-gradient(135deg, #F2EEEA 0%, #FFFFFF 100%);">
+          <h1 style="color: #1A1A1A;">Empowering individuals to turn ideas into <span style="color: #C4A57B;">impact</span></h1>
+          <p style="color: #5A5A5A;">Through career clarity, enterprise education, and the courage to act.</p>
+          <div class="buttons">
+            <button class="btn btn-primary" style="background: #C4A57B;">Explore Services</button>
+            <button class="btn btn-secondary" style="color: #C4A57B; border-color: #C4A57B; background: transparent;">Read My Story</button>
+          </div>
+        </div>
+      </div>
+      <div class="choice">
+        <p>Like this option? Choose <strong>Option 4</strong></p>
+      </div>
+    </div>
+
+    <!-- Option 5: Earthy Neutral -->
+    <div class="palette">
+      <div class="palette-header">
+        <div class="palette-name">Option 5: Earthy Neutral</div>
+        <div class="palette-desc">Grounded, professional, organic</div>
+        <div class="palette-vibe">Vibe: Natural, professional, understated</div>
+      </div>
+      <div class="palette-body" style="background: #FAF8F5;">
+        <div class="section-title" style="color: #3D3832;">Color Swatches</div>
+        <div class="swatches">
+          <div class="swatch">
+            <div class="swatch-color" style="background: #A39B8B;"></div>
+            <div class="swatch-label" style="color: #3D3832;">Primary</div>
+            <div class="swatch-hex" style="color: #716B60;">#A39B8B</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #EAE6DC;"></div>
+            <div class="swatch-label" style="color: #3D3832;">Secondary</div>
+            <div class="swatch-hex" style="color: #716B60;">#EAE6DC</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #8B7E6E;"></div>
+            <div class="swatch-label" style="color: #3D3832;">Accent</div>
+            <div class="swatch-hex" style="color: #716B60;">#8B7E6E</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #FAF8F5; border: 1px solid #ddd;"></div>
+            <div class="swatch-label" style="color: #3D3832;">Background</div>
+            <div class="swatch-hex" style="color: #716B60;">#FAF8F5</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #3D3832;"></div>
+            <div class="swatch-label" style="color: #3D3832;">Text Primary</div>
+            <div class="swatch-hex" style="color: #716B60;">#3D3832</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #716B60;"></div>
+            <div class="swatch-label" style="color: #3D3832;">Text Secondary</div>
+            <div class="swatch-hex" style="color: #716B60;">#716B60</div>
+          </div>
+        </div>
+
+        <div class="section-title" style="color: #3D3832;">Buttons</div>
+        <div class="buttons">
+          <button class="btn btn-primary" style="background: #A39B8B;">Primary Button</button>
+          <button class="btn btn-secondary" style="color: #A39B8B; border-color: #A39B8B;">Secondary Button</button>
+        </div>
+
+        <div class="section-title" style="color: #3D3832;">Content Example</div>
+        <div class="cards">
+          <div class="card" style="background: #EAE6DC;">
+            <h3 style="color: #3D3832;">Career Development Workshop</h3>
+            <p style="color: #716B60;">Interactive session helping participants gain career clarity through personality-based insights.</p>
+            <a href="#" style="color: #A39B8B;">Learn More →</a>
+          </div>
+          <div class="card" style="background: white;">
+            <div class="tag" style="background: #EAE6DC; color: #3D3832;">Entrepreneurship</div>
+            <h3 style="color: #3D3832;">Startup Fundamentals</h3>
+            <p style="color: #716B60;">Learn the essentials of building a startup from idea validation to market launch.</p>
+          </div>
+        </div>
+
+        <div class="section-title" style="color: #3D3832;">Hero Section Example</div>
+        <div class="hero" style="background: linear-gradient(135deg, #EAE6DC 0%, #FAF8F5 100%);">
+          <h1 style="color: #3D3832;">Empowering individuals to turn ideas into <span style="color: #A39B8B;">impact</span></h1>
+          <p style="color: #716B60;">Through career clarity, enterprise education, and the courage to act.</p>
+          <div class="buttons">
+            <button class="btn btn-primary" style="background: #A39B8B;">Explore Services</button>
+            <button class="btn btn-secondary" style="color: #A39B8B; border-color: #A39B8B; background: transparent;">Read My Story</button>
+          </div>
+        </div>
+      </div>
+      <div class="choice">
+        <p>Like this option? Choose <strong>Option 5</strong></p>
+      </div>
+    </div>
+
+    <div class="final-cta">
+      <h2>Made Your Choice?</h2>
+      <p>Let me know which option you prefer (1-5), and I'll update your entire website immediately!</p>
+      <p>You can also mix colors from different palettes if you'd like something custom.</p>
+    </div>
+  </div>
+</body>
+</html>

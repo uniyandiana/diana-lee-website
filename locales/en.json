@@ -1,0 +1,228 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "resources": "Resources",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero": {
+      "title": "Empowering individuals to turn ideas into",
+      "titleHighlight": "impact",
+      "subtitle": "Career Development Facilitator • Enterprise Educator • Social Innovator",
+      "ctaServices": "What I Offer",
+      "ctaContact": "Get in Touch"
+    },
+    "whatIDo": {
+      "title": "What I Do",
+      "careerClarity": {
+        "title": "Career Clarity",
+        "description": "Helping individuals discover direction through personality insights and structured reflection"
+      },
+      "enterpriseEducation": {
+        "title": "Enterprise Education",
+        "description": "Teaching startup fundamentals and entrepreneurial thinking to aspiring founders"
+      },
+      "facilitation": {
+        "title": "Facilitation",
+        "description": "Designing workshops and programmes that create spaces for growth and discovery"
+      }
+    },
+    "currently": {
+      "title": "Currently",
+      "paragraph1": "I'm working at the University of Oxford's entrepreneurship service, supporting the growth of entrepreneurial talent and ecosystems whilst simultaneously building social impact organisations as Founder of Oxford Hongkongers CIC and Director of a Hong Kong-based charity foundation.",
+      "paragraph2": "With a background in Counselling & Psychology, I bring a human-centred approach to career development and entrepreneurship, currently deepening my expertise through an MSc in Business Psychology and MA in Career Development whilst holding professional certifications as an NCDA Career Services Provider (CCSP) and Global Career Development Facilitator (GCDF).",
+      "readMore": "Read my full story"
+    },
+    "featuredIn": {
+      "title": "Sharing Insights On",
+      "subtitle": "Social innovation, community building, and cross-cultural dialogue"
+    },
+    "partners": {
+      "title": "Partners & Collaborations",
+      "subtitle": "Working with organisations to create meaningful impact"
+    },
+    "cta": {
+      "title": "Let's Work Together",
+      "description": "Whether you're seeking career clarity or building something new, I'd love to hear from you",
+      "button": "Get in Touch"
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "About Me",
+      "subtitle": "I help individuals discover agency through career clarity and entrepreneurial thinking",
+      "description": "Based at the University of Oxford, I design transformative learning experiences that empower people to turn ideas into impact."
+    },
+    "story": {
+      "paragraph1": "I'm Diana Lee, a Career Development Facilitator • Enterprise Educator • Social Innovator currently working at the University of Oxford's entrepreneurship service.",
+      "paragraph2": "With over a decade of experience across higher education and the NGO sector—including my time at HKUST's Entrepreneurship Centre—I've designed initiatives that empower youth and aspiring founders to turn ideas into impact.",
+      "paragraph3": "I'm also Founder of Oxford Hongkongers CIC, Director of a Hong Kong-based charity foundation, and currently pursuing an MSc in Business Psychology and MA in Career Development."
+    },
+    "qualifications": {
+      "title": "Qualifications & Credentials",
+      "education": {
+        "title": "Education",
+        "bachelor": "Bachelor's Degree in Counselling & Psychology",
+        "msc": "MSc in Business Psychology (In Progress)",
+        "ma": "MA in Career Development (In Progress)"
+      },
+      "certifications": {
+        "title": "Professional Certifications",
+        "ccsp": "NCDA CCSP – Certified Career Services Provider",
+        "gcdf": "GCDF – Global Career Development Facilitator (CCE)",
+        "pd": "Personality Dimensions® Facilitator"
+      }
+    },
+    "philosophy": {
+      "title": "How I Work",
+      "quote": "Career development and entrepreneurship are not linear ladders—they are evolving journeys shaped by identity, context, and courage.",
+      "theoryInformed": "Theory-Informed",
+      "theoryInformedDesc": "Grounded in career development theory and business psychology",
+      "personalityBased": "Personality-Based",
+      "personalityBasedDesc": "Certified Personality Dimensions® Facilitator",
+      "experienceDriven": "Experience-Driven",
+      "experienceDrivenDesc": "Practical exposure to startups and ecosystems",
+      "humanCentred": "Human-Centred",
+      "humanCentredDesc": "Creating reflective spaces for growth",
+      "tagline1": "I don't just teach entrepreneurship.",
+      "tagline2": "I design environments where people discover agency."
+    },
+    "inAction": {
+      "title": "In Action",
+      "facilitating": "Facilitating Workshops",
+      "education": "Entrepreneurship Education",
+      "speaking": "Speaking & Sharing"
+    },
+    "experience": {
+      "title": "Experience Highlights",
+      "uk": "United Kingdom",
+      "hk": "Hong Kong",
+      "oxford": "University of Oxford",
+      "oxfordDesc": "Entrepreneurship service | Supporting talent & ecosystem growth",
+      "ohcic": "Oxford Hongkongers CIC",
+      "ohcicDesc": "Founder | Building community across UK & Hong Kong",
+      "foreignteer": "Foreignteer",
+      "foreignteerDesc": "Founder | Connecting travellers with NGOs for local micro-volunteering experiences",
+      "hkust": "The Hong Kong University of Science and Technology",
+      "hkustDesc": "Entrepreneurship education & startup support",
+      "mymailbox": "Mymailbox852",
+      "mymailboxDesc": "Founder | Organisation promoting wellness with over 10,000 users",
+      "laviolet": "La Violet Charity Foundation",
+      "lavioletDesc": "Director | Empowering individuals to achieve their aspirations and realize their potential"
+    },
+    "cta": {
+      "title": "Let's Connect",
+      "description": "Interested in working together or learning more?",
+      "contact": "Get in Touch",
+      "services": "View Services"
+    }
+  },
+  "services": {
+    "hero": {
+      "title": "Services",
+      "subtitle": "Integrating psychology + entrepreneurship + facilitation + experiential design"
+    },
+    "forIndividuals": "For Individuals",
+    "forOrganizations": "For Schools, Corporates & Teams",
+    "careerFacilitation": {
+      "title": "1:1 Career Facilitation",
+      "description": "Personalized sessions for career clarity and direction. Combining psychology, structured reflection, and practical strategy—moving beyond advice into actionable clarity.",
+      "topic1": "Career direction exploration",
+      "topic2": "Personality-based insights",
+      "topic3": "Career transitions & pathway mapping",
+      "topic4": "Personal positioning & purpose alignment"
+    },
+    "startupCoaching": {
+      "title": "1:1 Startup Coaching",
+      "description": "One-on-one guidance for aspiring founders and early-stage entrepreneurs navigating their entrepreneurial journey.",
+      "topic1": "Entrepreneurial journey guidance",
+      "topic2": "Early-stage idea validation",
+      "topic3": "Business model refinement",
+      "topic4": "Startup strategy & planning"
+    },
+    "workshops": {
+      "title": "Training & Workshops",
+      "description": "Interactive, research-informed training for universities, schools, NGOs, and organisations. As a certified Personality Dimensions® Facilitator, I integrate behavioural insights into career and entrepreneurship education.",
+      "topic1": "Career clarity & strengths identification",
+      "topic2": "Personality & team dynamics",
+      "topic3": "Entrepreneurial mindset",
+      "topic4": "Startup fundamentals"
+    },
+    "groupFacilitation": {
+      "title": "Group Facilitation & Cohort Programmes",
+      "description": "Small-group learning experiences integrating peer dialogue, guided reflection, and experiential exercises for teams and cohorts.",
+      "topic1": "University cohorts",
+      "topic2": "Youth leadership groups",
+      "topic3": "Early-career professionals",
+      "topic4": "Corporate teams"
+    },
+    "gameBased": {
+      "title": "Game-Based Learning",
+      "description": "Experiential board games that make career development and entrepreneurship tangible through structured gameplay and reflection.",
+      "topic1": "Career exploration games",
+      "topic2": "Entrepreneurial simulations",
+      "topic3": "Team building activities",
+      "topic4": "Leadership development"
+    },
+    "ecosystem": {
+      "title": "Programme & Ecosystem Development",
+      "description": "Supporting institutions in designing entrepreneurship and career development initiatives through strategic planning and ecosystem building.",
+      "topic1": "Curriculum & programme design",
+      "topic2": "Mentorship scheme structuring",
+      "topic3": "Community-building strategies",
+      "topic4": "Ecosystem mapping"
+    },
+    "cta": {
+      "bookSession": "Book a Session via Calendly",
+      "enquire": "Enquire About Our Services",
+      "title": "Ready to Work Together?",
+      "subtitle": "Research-informed • Human-centred • Experiential • Action-oriented",
+      "button": "Get in Touch"
+    }
+  },
+  "resources": {
+    "hero": {
+      "title": "Resources & Insights",
+      "subtitle": "Free tools, guides, and reflections on career development and entrepreneurship"
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Get in Touch",
+      "subtitle": "Let's explore how we can work together"
+    },
+    "form": {
+      "title": "Send a Message",
+      "successMessage": "Thank you for your message! I'll get back to you soon.",
+      "nameLabel": "Your Name *",
+      "namePlaceholder": "Jane Doe",
+      "emailLabel": "Email Address *",
+      "emailPlaceholder": "jane@example.com",
+      "subjectLabel": "Subject *",
+      "subjectPlaceholder": "Select a topic...",
+      "subjectWorkshop": "Workshop Inquiry",
+      "subjectOneOnOne": "1:1 Facilitation",
+      "subjectCohort": "Cohort Programme",
+      "subjectEcosystem": "Ecosystem Development",
+      "subjectSpeaking": "Speaking Engagement",
+      "subjectOther": "Other",
+      "messageLabel": "Message *",
+      "messagePlaceholder": "Tell me about your inquiry...",
+      "submitButton": "Send Message"
+    },
+    "info": {
+      "title": "Contact Information",
+      "emailTitle": "Email",
+      "locationTitle": "Location",
+      "locationText": "Hong Kong & Oxford, UK",
+      "socialTitle": "Connect on Social Media",
+      "linkedIn": "LinkedIn",
+      "instagram1": "@diana.to.inspire (中文)",
+      "instagram2": "@diana.career (English)",
+      "responseTitle": "Response Time",
+      "responseText": "I typically respond to inquiries within 2-3 business days. For urgent matters, please indicate this in your message subject."
+    }
+  }
+}

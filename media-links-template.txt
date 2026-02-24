@@ -1,0 +1,23 @@
+MEDIA LINKS TEMPLATE
+====================
+Please fill in the YouTube video URL for each media outlet below.
+If you don't have a video for a specific outlet, leave it blank or write "none"
+
+Format: Media Name | YouTube Video URL
+-------------------------------------
+
+Ming Pao |
+RTHK |
+TVB |
+Now TV |
+Viu TV |
+Cable TV |
+D100 |
+Metro Radio |
+CR881903 |
+Sing Tao |
+ETNet |
+RTI |
+
+Example format:
+Ming Pao | https://www.youtube.com/watch?v=XXXXXXXXX

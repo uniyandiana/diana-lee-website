@@ -1,0 +1,228 @@
+{
+  "nav": {
+    "home": "主頁",
+    "about": "關於我",
+    "services": "服務",
+    "resources": "資源",
+    "contact": "聯絡"
+  },
+  "home": {
+    "hero": {
+      "title": "助人將想法化為",
+      "titleHighlight": "影響力",
+      "subtitle": "職涯規劃師 • 創業教育者 • 社會創新者",
+      "ctaServices": "我的服務",
+      "ctaContact": "聯絡我"
+    },
+    "whatIDo": {
+      "title": "我的工作",
+      "careerClarity": {
+        "title": "職涯方向",
+        "description": ["透過性格分析和結構性反思，", "協助個人發掘職涯方向"]
+      },
+      "enterpriseEducation": {
+        "title": "企業教育",
+        "description": "向有志創業者分享初創企業基礎知識和創業思維"
+      },
+      "facilitation": {
+        "title": "工作坊引導",
+        "description": ["設計工作坊和計劃，", "創造成長與探索的空間"]
+      }
+    },
+    "currently": {
+      "title": "現時",
+      "paragraph1": ["我目前在牛津大學創業服務部門工作，支持創業人才和生態系統的發展，", "同時作為Oxford Hongkongers CIC的創辦人及香港非牟利機構的董事，建立社會影響力組織。"],
+      "paragraph2": "我擁有輔導與心理學背景，將以人為本的方法融入職涯發展和創業領域。目前正在深造商業心理學碩士和職涯發展碩士學位，並持有NCDA認證職涯服務提供者(CCSP)及全球職涯發展引導師(GCDF)專業資格。",
+      "readMore": "閱讀完整故事"
+    },
+    "featuredIn": {
+      "title": "分享見解於",
+      "subtitle": "社會創新、社區建設和跨文化對話"
+    },
+    "partners": {
+      "title": "合作夥伴",
+      "subtitle": "與機構合作創造有意義的影響力"
+    },
+    "cta": {
+      "title": "讓我們一起合作",
+      "description": "無論你正在尋找職涯方向，還是在建立新事物，我很樂意與你聯繫",
+      "button": "聯絡我"
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "關於我",
+      "subtitle": "我協助個人透過職涯明確性和創業思維發掘自主性",
+      "description": ["身處牛津大學，我設計變革性的學習體驗，", "讓人們能夠將想法化為影響力。"]
+    },
+    "story": {
+      "paragraph1": ["我是李采穎（Diana Lee）", "一位職涯規劃師 • 創業教育者 • 社會創新者", "目前在牛津大學創業服務部門工作。"],
+      "paragraph2": "在高等教育及非政府組織界別擁有超過十年的經驗，包括在香港科技大學創業中心的工作，我設計了多個賦能青年及有志創業者將想法化為影響力的計劃。",
+      "paragraph3": ["我同時是Oxford Hongkongers CIC的創辦人、香港非牟利機構董事，", "並正在修讀商業心理學碩士及職涯發展碩士。"]
+    },
+    "qualifications": {
+      "title": "資歷與證書",
+      "education": {
+        "title": "學歷",
+        "bachelor": "輔導與心理學學士學位",
+        "msc": "商業心理學碩士（進修中）",
+        "ma": "職涯發展碩士（進修中）"
+      },
+      "certifications": {
+        "title": "專業資格",
+        "ccsp": "NCDA CCSP – 認證職涯服務提供者",
+        "gcdf": "GCDF – 全球職涯發展引導師（CCE）",
+        "pd": "Personality Dimensions® 引導師"
+      }
+    },
+    "philosophy": {
+      "title": "工作思維",
+      "quote": ["職涯發展和創業並非直線的階梯——", "它們是由身份、處境和勇氣所塑造的不斷演變的旅程。"],
+      "theoryInformed": "理論為本",
+      "theoryInformedDesc": "紮根於職涯發展理論和商業心理學",
+      "personalityBased": "性格導向",
+      "personalityBasedDesc": "認證Personality Dimensions®引導師",
+      "experienceDriven": "經驗驅動",
+      "experienceDrivenDesc": "實際接觸初創企業和生態系統",
+      "humanCentred": "以人為本",
+      "humanCentredDesc": "創造反思與成長的空間",
+      "tagline1": "我不僅分享創業知識。",
+      "tagline2": "我設計讓人們發掘自主性的環境。"
+    },
+    "inAction": {
+      "title": "實踐行動",
+      "facilitating": "工作坊引導",
+      "education": "創業教育",
+      "speaking": "演講與分享"
+    },
+    "experience": {
+      "title": "經驗亮點",
+      "uk": "英國",
+      "hk": "香港",
+      "oxford": "牛津大學",
+      "oxfordDesc": "創業服務 | 支持人才與生態系統發展",
+      "ohcic": "Oxford Hongkongers CIC",
+      "ohcicDesc": "創辦人 | 在英國與香港之間建立社群",
+      "foreignteer": "Foreignteer",
+      "foreignteerDesc": "創辦人 | 連結旅客與非政府組織進行本地微型志願服務體驗",
+      "hkust": "香港科技大學",
+      "hkustDesc": "創業教育與初創企業支援",
+      "mymailbox": "郵心出發（Mymailbox852）",
+      "mymailboxDesc": "創辦人 | 推廣身心健康的機構，超過10,000名用戶",
+      "laviolet": "籽識慈善基金（La Violet Charity Foundation）",
+      "lavioletDesc": "董事 | 賦能個人實現抱負並發揮潛能"
+    },
+    "cta": {
+      "title": "聯繫交流",
+      "description": "有興趣合作或了解更多？",
+      "contact": "聯絡我",
+      "services": "查看服務"
+    }
+  },
+  "services": {
+    "hero": {
+      "title": "服務",
+      "subtitle": "融合心理學 + 創業 + 引導 + 體驗式設計"
+    },
+    "forIndividuals": "個人服務",
+    "forOrganizations": "學校、企業及團隊",
+    "careerFacilitation": {
+      "title": "一對一職涯引導",
+      "description": "為職涯明確性和方向提供個人化諮詢。結合心理學、結構性反思和實用策略——超越建議，達致可行的清晰度。",
+      "topic1": "職涯方向探索",
+      "topic2": "性格為本的洞見",
+      "topic3": "職涯轉變與路徑規劃",
+      "topic4": "個人定位與目標一致"
+    },
+    "startupCoaching": {
+      "title": "一對一初創輔導",
+      "description": "為有志創業者和早期創業家提供一對一指導，幫助他們展開創業旅程。",
+      "topic1": "創業旅程指導",
+      "topic2": "早期概念驗證",
+      "topic3": "商業模式優化",
+      "topic4": "初創策略與規劃"
+    },
+    "workshops": {
+      "title": "培訓與工作坊",
+      "description": "為大學、學校、非政府組織和機構提供互動式、以研究為基礎的培訓。作為認證Personality Dimensions®引導師，我將行為洞見融入職涯和創業教育。",
+      "topic1": "職涯明確性與強項識別",
+      "topic2": "性格與團隊動力",
+      "topic3": "創業思維",
+      "topic4": "初創基礎知識"
+    },
+    "groupFacilitation": {
+      "title": "小組引導與群組計劃",
+      "description": "融合同儕對話、引導反思和體驗式練習的小組學習體驗，適合團隊和群組。",
+      "topic1": "大學群組",
+      "topic2": "青年領導小組",
+      "topic3": "職涯初期專業人士",
+      "topic4": "企業團隊"
+    },
+    "gameBased": {
+      "title": "遊戲式學習",
+      "description": "透過結構性遊戲和反思，讓職涯發展和創業變得具體的體驗式桌遊。",
+      "topic1": "職涯探索遊戲",
+      "topic2": "創業模擬",
+      "topic3": "團隊建設活動",
+      "topic4": "領導力發展"
+    },
+    "ecosystem": {
+      "title": "計劃與生態系統發展",
+      "description": "透過策略規劃和生態系統建設，支持機構設計創業和職涯發展計劃。",
+      "topic1": "課程與計劃設計",
+      "topic2": "導師計劃架構",
+      "topic3": "社群建設策略",
+      "topic4": "生態系統繪圖"
+    },
+    "cta": {
+      "bookSession": "透過Calendly預約",
+      "enquire": "查詢我們的服務",
+      "title": "準備好合作了嗎？",
+      "subtitle": "以研究為基礎 • 以人為本 • 體驗式 • 行動導向",
+      "button": "聯絡我"
+    }
+  },
+  "resources": {
+    "hero": {
+      "title": "資源與見解",
+      "subtitle": "職涯發展和創業的免費工具、指南和反思（以下資源以英文為主）"
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "聯絡我",
+      "subtitle": "讓我們探討如何合作"
+    },
+    "form": {
+      "title": "發送訊息",
+      "successMessage": "感謝你的訊息！我會盡快回覆。",
+      "nameLabel": "你的姓名 *",
+      "namePlaceholder": "陳小明",
+      "emailLabel": "電郵地址 *",
+      "emailPlaceholder": "your@example.com",
+      "subjectLabel": "主題 *",
+      "subjectPlaceholder": "選擇主題...",
+      "subjectWorkshop": "工作坊查詢",
+      "subjectOneOnOne": "一對一引導",
+      "subjectCohort": "群組計劃",
+      "subjectEcosystem": "生態系統發展",
+      "subjectSpeaking": "演講邀約",
+      "subjectOther": "其他",
+      "messageLabel": "訊息 *",
+      "messagePlaceholder": "告訴我你的查詢...",
+      "submitButton": "發送訊息"
+    },
+    "info": {
+      "title": "聯絡資訊",
+      "emailTitle": "電郵",
+      "locationTitle": "地點",
+      "locationText": "香港及英國牛津",
+      "socialTitle": "社交媒體",
+      "linkedIn": "LinkedIn",
+      "instagram1": "@diana.to.inspire（中文）",
+      "instagram2": "@diana.career（英文）",
+      "responseTitle": "回覆時間",
+      "responseText": "我通常會在2-3個工作天內回覆查詢。如有緊急事項，請在訊息主題中註明。"
+    }
+  }
+}
