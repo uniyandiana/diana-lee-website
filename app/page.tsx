@@ -49,14 +49,15 @@ export default function Home() {
               </div>
             </FadeIn>
             <FadeIn direction="right" delay={300} className="hidden md:block">
-              <Image
-                src="/images/Diana - All Souls Library.png"
-                alt="Diana Lee at All Souls Library, Oxford"
-                width={500}
-                height={600}
-                className="rounded-2xl shadow-xl w-full h-auto"
-                priority
-              />
+              <div className="relative w-full h-[480px]">
+                <Image
+                  src="/images/Diana - All Souls Library.png"
+                  alt="Diana Lee at All Souls Library, Oxford"
+                  fill
+                  className="rounded-2xl shadow-xl object-cover object-[center_80%]"
+                  priority
+                />
+              </div>
             </FadeIn>
           </div>
         </div>
