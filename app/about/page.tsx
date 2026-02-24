@@ -43,7 +43,7 @@ export default function About() {
               </p>
             </div>
             <div className="order-1 md:order-2">
-              <div className="relative w-full h-[480px]">
+              <div className="relative w-full h-[500px]">
                 <Image
                   src="/images/Diana Lee - Professional Portrait (Oxford Reuben College).jpg"
                   alt="Diana Lee at Oxford Reuben College"
