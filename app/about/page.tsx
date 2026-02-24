@@ -28,18 +28,18 @@ export default function About() {
         <div className="container-custom max-w-6xl">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="order-2 md:order-1">
-              <h1 className="mb-8">I am Diana Lee</h1>
+              <h1 className="mb-8">{t('about.hero.name')}</h1>
 
               <p className="text-lg text-[#6b7280] mb-6">
-                With over a decade of experience across higher education and the NGO sector,
+                {t('about.hero.intro')}
               </p>
 
               <p className="text-xl text-[#5A9AB4] font-semibold mb-8">
-                I design transformative learning experiences that empower people to turn ideas into impact.
+                {t('about.hero.mission')}
               </p>
 
               <p className="text-lg text-[#1f2937]">
-                I'm a Career Development Facilitator • Enterprise Educator • Social Innovator, currently working at the University of Oxford's entrepreneurship service.
+                {t('about.hero.roles')}
               </p>
             </div>
             <div className="order-1 md:order-2">

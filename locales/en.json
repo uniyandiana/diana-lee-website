@@ -53,7 +53,11 @@
     "hero": {
       "title": "About Me",
       "subtitle": "I help individuals discover agency through career clarity and entrepreneurial thinking",
-      "description": "Based at the University of Oxford, I design transformative learning experiences that empower people to turn ideas into impact."
+      "description": "Based at the University of Oxford, I design transformative learning experiences that empower people to turn ideas into impact.",
+      "name": "I am Diana Lee",
+      "intro": "With over a decade of experience across higher education and the NGO sector,",
+      "mission": "I design transformative learning experiences that empower people to turn ideas into impact.",
+      "roles": "I'm a Career Development Facilitator • Enterprise Educator • Social Innovator, currently working at the University of Oxford's entrepreneurship service."
     },
     "story": {
       "paragraph1": "I'm Diana Lee, a Career Development Facilitator • Enterprise Educator • Social Innovator currently working at the University of Oxford's entrepreneurship service.",
