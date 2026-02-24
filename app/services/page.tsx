@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useLanguage } from "@/contexts/LanguageContext";
+import ExposureGallery from "@/components/ExposureGallery";
 
 export default function Services() {
   const { t } = useLanguage();
@@ -82,6 +83,57 @@ export default function Services() {
         t('services.ecosystem.topic3'),
         t('services.ecosystem.topic4')
       ]
+    }
+  ];
+
+  const exposureItems = [
+    {
+      id: "1",
+      image: "/images/National Career Guidance Conference.jpeg",
+      title: "National Career Guidance Conference",
+      organization: "Career Development Institute, UK",
+      date: "November 2024",
+      content: "Attended the UK's premier career guidance conference, connecting with industry leaders and exploring the latest developments in career development practice."
+    },
+    {
+      id: "2",
+      image: "/images/Design Thinking Workshop for NGO.jpeg",
+      title: "Design Thinking Workshop",
+      organization: "NGO Partner Organization",
+      date: "October 2024",
+      content: "Facilitated a design thinking workshop for NGO professionals, helping them develop innovative solutions for social challenges."
+    },
+    {
+      id: "3",
+      image: "/images/Workshop Delivery (Personality Dimensions).jpeg",
+      title: "Personality Dimensions Workshop",
+      organization: "Corporate Client",
+      date: "September 2024",
+      content: "Delivered an engaging workshop on personality dimensions, helping participants understand themselves and work better in teams."
+    },
+    {
+      id: "4",
+      image: "/images/Lecture on Social Innovation.jpg",
+      title: "Social Innovation Lecture",
+      organization: "University Partner",
+      date: "August 2024",
+      content: "Guest lecture on social innovation and entrepreneurship, inspiring students to create positive change in their communities."
+    },
+    {
+      id: "5",
+      image: "/images/Corporate Workshop (Santa).jpeg",
+      title: "Corporate Team Building",
+      organization: "Corporate Partner",
+      date: "December 2023",
+      content: "Interactive team building session combining games and learning to strengthen team dynamics and collaboration."
+    },
+    {
+      id: "6",
+      image: "/images/Joining the International Enterprise Educator Conference.jpeg",
+      title: "International Enterprise Educator Conference",
+      organization: "Global Enterprise Education Network",
+      date: "July 2024",
+      content: "Participated in international conference, sharing best practices in enterprise education with peers from around the world."
     }
   ];
 
@@ -212,6 +264,14 @@ export default function Services() {
               {t('services.cta.enquire')}
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* My Exposure */}
+      <section className="py-12 md:py-16 bg-white">
+        <div className="container-custom">
+          <h2 className="text-center mb-12 text-[#5A9AB4]">My Exposure</h2>
+          <ExposureGallery items={exposureItems} />
         </div>
       </section>
 
