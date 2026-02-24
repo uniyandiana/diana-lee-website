@@ -23,7 +23,7 @@ export default function About() {
 
   return (
     <div>
-      {/* Hero - Rearranged */}
+      {/* Hero */}
       <section className="section-padding bg-gradient-to-br from-[#F7F9F9] to-[#FFFEFA]">
         <div className="container-custom max-w-6xl">
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -56,7 +56,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Professional Experience - With Links */}
+      {/* Professional Experience */}
       <section className="section-padding bg-white">
         <div className="container-custom max-w-6xl">
           <h2 className="text-center mb-12">{t('about.experience.title')}</h2>
@@ -69,7 +69,7 @@ export default function About() {
                 <div className="border-l-4 border-[#5A9AB4] pl-6">
                   <h4 className="font-bold text-[#1f2937] text-base mb-2">
                     <a href="https://www.ox.ac.uk/" target="_blank" rel="noopener noreferrer" className="hover:text-[#5A9AB4] transition-colors">
-                      {t('about.experience.oxford')} →
+                      {t('about.experience.oxford')}
                     </a>
                   </h4>
                   <p className="text-[#6b7280] text-sm">{t('about.experience.oxfordDesc')}</p>
@@ -77,7 +77,7 @@ export default function About() {
                 <div className="border-l-4 border-[#5A9AB4] pl-6">
                   <h4 className="font-bold text-[#1f2937] text-base mb-2">
                     <a href="https://www.oxford-hk.com/" target="_blank" rel="noopener noreferrer" className="hover:text-[#5A9AB4] transition-colors">
-                      {t('about.experience.ohcic')} →
+                      {t('about.experience.ohcic')}
                     </a>
                   </h4>
                   <p className="text-[#6b7280] text-sm">{t('about.experience.ohcicDesc')}</p>
@@ -85,7 +85,7 @@ export default function About() {
                 <div className="border-l-4 border-[#5A9AB4] pl-6">
                   <h4 className="font-bold text-[#1f2937] text-base mb-2">
                     <a href="https://foreignteer.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#5A9AB4] transition-colors">
-                      {t('about.experience.foreignteer')} →
+                      {t('about.experience.foreignteer')}
                     </a>
                   </h4>
                   <p className="text-[#6b7280] text-sm">{t('about.experience.foreignteerDesc')}</p>
@@ -100,7 +100,7 @@ export default function About() {
                 <div className="border-l-4 border-[#5A9AB4] pl-6">
                   <h4 className="font-bold text-[#1f2937] text-base mb-2">
                     <a href="https://hkust.edu.hk/" target="_blank" rel="noopener noreferrer" className="hover:text-[#5A9AB4] transition-colors">
-                      {t('about.experience.hkust')} →
+                      {t('about.experience.hkust')}
                     </a>
                   </h4>
                   <p className="text-[#6b7280] text-sm">{t('about.experience.hkustDesc')}</p>
@@ -108,7 +108,7 @@ export default function About() {
                 <div className="border-l-4 border-[#5A9AB4] pl-6">
                   <h4 className="font-bold text-[#1f2937] text-base mb-2">
                     <a href="https://www.instagram.com/mymailbox852/" target="_blank" rel="noopener noreferrer" className="hover:text-[#5A9AB4] transition-colors">
-                      {t('about.experience.mymailbox')} →
+                      {t('about.experience.mymailbox')}
                     </a>
                   </h4>
                   <p className="text-[#6b7280] text-sm">{t('about.experience.mymailboxDesc')}</p>
@@ -116,7 +116,7 @@ export default function About() {
                 <div className="border-l-4 border-[#5A9AB4] pl-6">
                   <h4 className="font-bold text-[#1f2937] text-base mb-2">
                     <a href="https://www.lavioletcharity.org/" target="_blank" rel="noopener noreferrer" className="hover:text-[#5A9AB4] transition-colors">
-                      {t('about.experience.laviolet')} →
+                      {t('about.experience.laviolet')}
                     </a>
                   </h4>
                   <p className="text-[#6b7280] text-sm">{t('about.experience.lavioletDesc')}</p>
@@ -127,40 +127,79 @@ export default function About() {
         </div>
       </section>
 
-      {/* Qualifications - Bigger Font */}
+      {/* Qualifications & Awards - Aligned Style */}
       <section className="py-12 md:py-16 bg-[#FFFEFA]">
-        <div className="container-custom max-w-4xl">
+        <div className="container-custom max-w-6xl">
           <h2 className="text-center mb-10">{t('about.qualifications.title')}</h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Education */}
-            <div className="bg-white p-8 rounded-xl shadow-sm">
-              <h3 className="text-xl font-bold text-[#5A9AB4] mb-4 flex items-center gap-2">
+            <div className="bg-[#F7F9F9] p-8 rounded-xl">
+              <h3 className="text-xl font-bold text-[#5A9AB4] mb-6 text-center flex items-center justify-center gap-2">
                 <span className="text-2xl">📚</span> {t('about.qualifications.education.title')}
               </h3>
-              <ul className="space-y-3 text-[#6b7280]">
-                <li className="text-base">• {t('about.qualifications.education.bachelor')}</li>
-                <li className="text-base">• {t('about.qualifications.education.msc')}</li>
-                <li className="text-base">• {t('about.qualifications.education.ma')}</li>
-              </ul>
+              <div className="space-y-4">
+                <div className="border-l-4 border-[#5A9AB4] pl-4">
+                  <p className="text-[#6b7280] text-sm">{t('about.qualifications.education.bachelor')}</p>
+                </div>
+                <div className="border-l-4 border-[#5A9AB4] pl-4">
+                  <p className="text-[#6b7280] text-sm">{t('about.qualifications.education.msc')}</p>
+                </div>
+                <div className="border-l-4 border-[#5A9AB4] pl-4">
+                  <p className="text-[#6b7280] text-sm">{t('about.qualifications.education.ma')}</p>
+                </div>
+                <div className="border-l-4 border-[#5A9AB4] pl-4">
+                  <p className="text-[#6b7280] text-sm">The Professional Certificate in Career Development Facilitation</p>
+                </div>
+              </div>
             </div>
 
             {/* Certifications */}
-            <div className="bg-white p-8 rounded-xl shadow-sm">
-              <h3 className="text-xl font-bold text-[#5A9AB4] mb-4 flex items-center gap-2">
+            <div className="bg-[#F7F9F9] p-8 rounded-xl">
+              <h3 className="text-xl font-bold text-[#5A9AB4] mb-6 text-center flex items-center justify-center gap-2">
                 <span className="text-2xl">🏆</span> {t('about.qualifications.certifications.title')}
               </h3>
-              <ul className="space-y-3 text-[#6b7280]">
-                <li className="text-base">• {t('about.qualifications.certifications.ccsp')}</li>
-                <li className="text-base">• {t('about.qualifications.certifications.gcdf')}</li>
-                <li className="text-base">• {t('about.qualifications.certifications.pd')}</li>
-              </ul>
+              <div className="space-y-4">
+                <div className="border-l-4 border-[#5A9AB4] pl-4">
+                  <p className="text-[#6b7280] text-sm">{t('about.qualifications.certifications.ccsp')}</p>
+                </div>
+                <div className="border-l-4 border-[#5A9AB4] pl-4">
+                  <p className="text-[#6b7280] text-sm">{t('about.qualifications.certifications.gcdf')}</p>
+                </div>
+                <div className="border-l-4 border-[#5A9AB4] pl-4">
+                  <p className="text-[#6b7280] text-sm">{t('about.qualifications.certifications.pd')}</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Awards */}
+            <div className="bg-[#F7F9F9] p-8 rounded-xl">
+              <h3 className="text-xl font-bold text-[#5A9AB4] mb-6 text-center flex items-center justify-center gap-2">
+                <span className="text-2xl">🌟</span> Awards
+              </h3>
+              <div className="space-y-4">
+                <div className="border-l-4 border-[#5A9AB4] pl-4">
+                  <p className="text-[#6b7280] text-sm">Enterprise Summer Scholarship 2025, UK</p>
+                </div>
+                <div className="border-l-4 border-[#5A9AB4] pl-4">
+                  <p className="text-[#6b7280] text-sm">Eastern District Outstanding Youth Award Scheme, HK</p>
+                </div>
+                <div className="border-l-4 border-[#5A9AB4] pl-4">
+                  <p className="text-[#6b7280] text-sm">Outstanding Service Awards for Tertiary Students, HK</p>
+                </div>
+                <div className="border-l-4 border-[#5A9AB4] pl-4">
+                  <p className="text-[#6b7280] text-sm">Rotary Youth Leadership Awards, HK</p>
+                </div>
+                <div className="border-l-4 border-[#5A9AB4] pl-4">
+                  <p className="text-[#6b7280] text-sm">University Service Scholarship, HK</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Philosophy - Enhanced with Icons */}
+      {/* Philosophy */}
       <section className="py-12 md:py-16 bg-white">
         <div className="container-custom max-w-4xl text-center">
           <h2 className="mb-8">{t('about.philosophy.title')}</h2>
