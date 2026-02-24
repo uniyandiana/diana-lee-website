@@ -96,7 +96,7 @@ export default function Privacy() {
             </p>
             <p className="text-[#6b7280] mb-6">
               <strong>Diana Lee</strong><br />
-              電郵：[您的電郵地址]<br />
+              電郵：contact@diana-lee.com<br />
               地點：英國牛津
             </p>
 
@@ -208,7 +208,7 @@ export default function Privacy() {
           </p>
           <p className="text-[#6b7280] mb-6">
             <strong>Diana Lee</strong><br />
-            Email: [Your Email Address]<br />
+            Email: contact@diana-lee.com<br />
             Location: Oxford, United Kingdom
           </p>
 
