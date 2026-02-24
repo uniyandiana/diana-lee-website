@@ -91,6 +91,14 @@ export default function About() {
                   </h4>
                   <p className="text-[#6b7280] text-sm">{t('about.experience.foreignteerDesc')}</p>
                 </div>
+                <div className="border-l-4 border-[#5A9AB4] pl-6">
+                  <h4 className="font-bold text-[#1f2937] text-base mb-2">
+                    <a href="https://www.hongkongers.org.uk/" target="_blank" rel="noopener noreferrer" className="hover:text-[#5A9AB4] transition-colors">
+                      {t('about.experience.hongkongersMag')}
+                    </a>
+                  </h4>
+                  <p className="text-[#6b7280] text-sm">{t('about.experience.hongkongersMagDesc')}</p>
+                </div>
               </div>
             </div>
 
