@@ -57,7 +57,7 @@
       "name": "我是李采穎",
       "intro": "在高等教育及非政府組織界別擁有超過十年的經驗，",
       "mission": "我設計變革性的學習體驗，讓人們能夠將想法化為影響力。",
-      "roles": "我是一位職涯規劃師 • 創業教育者 • 社會創新者，目前在牛津大學創業服務部門工作。"
+      "roles": ["我是一位職涯規劃師 • 創業教育者 • 社會創新者，", "目前在牛津大學創業服務部門工作。"]
     },
     "story": {
       "paragraph1": ["我是李采穎（Diana Lee）", "一位職涯規劃師 • 創業教育者 • 社會創新者", "目前在牛津大學創業服務部門工作。"],
@@ -76,7 +76,15 @@
         "title": "專業資格",
         "ccsp": "NCDA CCSP – 認證職涯服務提供者",
         "gcdf": "GCDF – 全球職涯發展引導師（CCE）",
-        "pd": "Personality Dimensions® 引導師"
+        "pd": "性格透視® 引導師",
+        "careerDevCert": "職涯發展規劃專業證書"
+      },
+      "awards": {
+        "title": "獎項",
+        "easternDistrict": "東區傑出青年",
+        "outstandingService": "傑出專上學生服務獎",
+        "rotary": "扶輪青年領袖獎",
+        "universityScholarship": "大學服務獎學金"
       }
     },
     "philosophy": {
@@ -114,7 +122,9 @@
       "mymailbox": "郵心出發（Mymailbox852）",
       "mymailboxDesc": "創辦人 | 推廣身心健康的機構，超過10,000名用戶",
       "laviolet": "籽識慈善基金（La Violet Charity Foundation）",
-      "lavioletDesc": "董事 | 賦能個人實現抱負並發揮潛能"
+      "lavioletDesc": "董事 | 賦能個人實現抱負並發揮潛能",
+      "rthk": "香港電台",
+      "rthkDesc": "電台主持｜製作及主持有關職涯、教育及科學等的電台節目"
     },
     "cta": {
       "title": "聯繫交流",
@@ -184,6 +194,9 @@
       "title": "準備好合作了嗎？",
       "subtitle": "以研究為基礎 • 以人為本 • 體驗式 • 行動導向",
       "button": "聯絡我"
+    },
+    "myExposure": {
+      "title": "我的經歷"
     }
   },
   "resources": {

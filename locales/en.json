@@ -76,7 +76,15 @@
         "title": "Professional Certifications",
         "ccsp": "NCDA CCSP – Certified Career Services Provider",
         "gcdf": "GCDF – Global Career Development Facilitator (CCE)",
-        "pd": "Personality Dimensions® Facilitator"
+        "pd": "Personality Dimensions® Facilitator",
+        "careerDevCert": "The Professional Certificate in Career Development Facilitation"
+      },
+      "awards": {
+        "title": "Awards",
+        "easternDistrict": "Eastern District Outstanding Youth Award Scheme, HK",
+        "outstandingService": "Outstanding Service Awards for Tertiary Students",
+        "rotary": "Rotary Youth Leadership Awards",
+        "universityScholarship": "University Service Scholarship"
       }
     },
     "philosophy": {
@@ -114,7 +122,9 @@
       "mymailbox": "Mymailbox852",
       "mymailboxDesc": "Founder | Organisation promoting wellness with over 10,000 users",
       "laviolet": "La Violet Charity Foundation",
-      "lavioletDesc": "Director | Empowering individuals to achieve their aspirations and realize their potential"
+      "lavioletDesc": "Director | Empowering individuals to achieve their aspirations and realize their potential",
+      "rthk": "Radio Television Hong Kong",
+      "rthkDesc": "Radio Host | Programmes about Career, Education, STEM, etc under CIBS Scheme"
     },
     "cta": {
       "title": "Let's Connect",
@@ -184,6 +194,9 @@
       "title": "Ready to Work Together?",
       "subtitle": "Research-informed • Human-centred • Experiential • Action-oriented",
       "button": "Get in Touch"
+    },
+    "myExposure": {
+      "title": "My Exposure"
     }
   },
   "resources": {
