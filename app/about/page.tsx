@@ -23,25 +23,23 @@ export default function About() {
 
   return (
     <div>
-      {/* Hero with Photo & Story Combined */}
+      {/* Hero - Rearranged */}
       <section className="section-padding bg-gradient-to-br from-[#F7F9F9] to-[#FFFEFA]">
         <div className="container-custom max-w-6xl">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="order-2 md:order-1">
-              <h1 className="mb-6">{t('about.hero.title')}</h1>
-              <p className="text-xl text-[#6b7280] mb-6">
-                {t('about.hero.subtitle')}
-              </p>
-              <p className="text-lg text-[#1f2937] mb-6">
-                {renderWithBreaks('about.hero.description')}
+              <h1 className="mb-8">I am Diana Lee</h1>
+
+              <p className="text-lg text-[#6b7280] mb-6">
+                With over a decade of experience across higher education and the NGO sector,
               </p>
 
-              {/* Story integrated here */}
-              <p className="text-lg leading-relaxed text-[#1f2937] mb-4">
-                <strong className="text-[#5A9AB4]">{renderWithBreaks('about.story.paragraph1')}</strong>
+              <p className="text-xl text-[#5A9AB4] font-semibold mb-8">
+                I design transformative learning experiences that empower people to turn ideas into impact.
               </p>
-              <p className="text-base leading-relaxed text-[#6b7280]">
-                {t('about.story.paragraph2')}
+
+              <p className="text-lg text-[#1f2937]">
+                I'm a Career Development Facilitator • Enterprise Educator • Social Innovator, currently working at the University of Oxford's entrepreneurship service.
               </p>
             </div>
             <div className="order-1 md:order-2">
@@ -58,120 +56,11 @@ export default function About() {
         </div>
       </section>
 
-      {/* Qualifications - Compact Version */}
-      <section className="py-12 md:py-16 bg-white">
-        <div className="container-custom max-w-4xl">
-          <h2 className="text-center mb-10">{t('about.qualifications.title')}</h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Education */}
-            <div className="bg-[#F7F9F9] p-6 rounded-xl">
-              <h3 className="text-lg font-bold text-[#5A9AB4] mb-3 flex items-center gap-2">
-                <span>📚</span> {t('about.qualifications.education.title')}
-              </h3>
-              <ul className="space-y-2 text-[#6b7280] text-sm">
-                <li>• {t('about.qualifications.education.bachelor')}</li>
-                <li>• {t('about.qualifications.education.msc')}</li>
-                <li>• {t('about.qualifications.education.ma')}</li>
-              </ul>
-            </div>
-
-            {/* Certifications */}
-            <div className="bg-[#F7F9F9] p-6 rounded-xl">
-              <h3 className="text-lg font-bold text-[#5A9AB4] mb-3 flex items-center gap-2">
-                <span>🏆</span> {t('about.qualifications.certifications.title')}
-              </h3>
-              <ul className="space-y-2 text-[#6b7280] text-sm">
-                <li>• {t('about.qualifications.certifications.ccsp')}</li>
-                <li>• {t('about.qualifications.certifications.gcdf')}</li>
-                <li>• {t('about.qualifications.certifications.pd')}</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Philosophy - Simplified */}
-      <section className="py-12 md:py-16 bg-[#FFFEFA]">
-        <div className="container-custom max-w-4xl text-center">
-          <h2 className="mb-8">{t('about.philosophy.title')}</h2>
-
-          <div className="bg-gradient-to-br from-[#5A9AB4] to-[#3E7C92] p-8 md:p-10 rounded-2xl text-white mb-8">
-            <p className="text-xl md:text-2xl leading-relaxed">
-              "{renderWithBreaks('about.philosophy.quote')}"
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-            <div className="bg-white p-4 rounded-lg">
-              <p className="font-semibold text-[#5A9AB4] text-sm">📚 {t('about.philosophy.theoryInformed')}</p>
-            </div>
-            <div className="bg-white p-4 rounded-lg">
-              <p className="font-semibold text-[#5A9AB4] text-sm">🧠 {t('about.philosophy.personalityBased')}</p>
-            </div>
-            <div className="bg-white p-4 rounded-lg">
-              <p className="font-semibold text-[#5A9AB4] text-sm">💡 {t('about.philosophy.experienceDriven')}</p>
-            </div>
-            <div className="bg-white p-4 rounded-lg">
-              <p className="font-semibold text-[#5A9AB4] text-sm">🤝 {t('about.philosophy.humanCentred')}</p>
-            </div>
-          </div>
-
-          <p className="text-lg text-[#1f2937] mb-2">
-            {t('about.philosophy.tagline1')}
-          </p>
-          <p className="text-2xl font-semibold text-[#5A9AB4]">
-            {t('about.philosophy.tagline2')}
-          </p>
-        </div>
-      </section>
-
-      {/* Experience & In Action Combined */}
+      {/* Professional Experience - Moved Up */}
       <section className="section-padding bg-white">
         <div className="container-custom max-w-6xl">
-          <h2 className="text-center mb-4">{t('about.experience.title')}</h2>
-          <p className="text-center text-[#6b7280] mb-12">{t('about.inAction.title')}</p>
+          <h2 className="text-center mb-12">{t('about.experience.title')}</h2>
 
-          {/* Photo Gallery */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-            <div className="relative h-64 rounded-xl overflow-hidden group">
-              <Image
-                src="/images/LVF Dream Plan Stage Speech Mic.png"
-                alt="Speaking at LVF Dream Plan event"
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
-                <p className="text-white font-semibold text-sm">{t('about.inAction.facilitating')}</p>
-              </div>
-            </div>
-
-            <div className="relative h-64 rounded-xl overflow-hidden group">
-              <Image
-                src="/images/HKUST Entrepreneurship Competition.png"
-                alt="HKUST Entrepreneurship Competition"
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
-                <p className="text-white font-semibold text-sm">{t('about.inAction.education')}</p>
-              </div>
-            </div>
-
-            <div className="relative h-64 rounded-xl overflow-hidden group">
-              <Image
-                src="/images/School Sharing.jpg"
-                alt="Panel discussion at school"
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
-                <p className="text-white font-semibold text-sm">{t('about.inAction.speaking')}</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Experience Timeline - Compact */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* UK */}
             <div className="bg-[#F7F9F9] p-6 rounded-xl">
@@ -211,6 +100,74 @@ export default function About() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Qualifications */}
+      <section className="py-12 md:py-16 bg-[#FFFEFA]">
+        <div className="container-custom max-w-4xl">
+          <h2 className="text-center mb-10">{t('about.qualifications.title')}</h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Education */}
+            <div className="bg-white p-6 rounded-xl shadow-sm">
+              <h3 className="text-lg font-bold text-[#5A9AB4] mb-3 flex items-center gap-2">
+                <span>📚</span> {t('about.qualifications.education.title')}
+              </h3>
+              <ul className="space-y-2 text-[#6b7280] text-sm">
+                <li>• {t('about.qualifications.education.bachelor')}</li>
+                <li>• {t('about.qualifications.education.msc')}</li>
+                <li>• {t('about.qualifications.education.ma')}</li>
+              </ul>
+            </div>
+
+            {/* Certifications */}
+            <div className="bg-white p-6 rounded-xl shadow-sm">
+              <h3 className="text-lg font-bold text-[#5A9AB4] mb-3 flex items-center gap-2">
+                <span>🏆</span> {t('about.qualifications.certifications.title')}
+              </h3>
+              <ul className="space-y-2 text-[#6b7280] text-sm">
+                <li>• {t('about.qualifications.certifications.ccsp')}</li>
+                <li>• {t('about.qualifications.certifications.gcdf')}</li>
+                <li>• {t('about.qualifications.certifications.pd')}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Philosophy */}
+      <section className="py-12 md:py-16 bg-white">
+        <div className="container-custom max-w-4xl text-center">
+          <h2 className="mb-8">{t('about.philosophy.title')}</h2>
+
+          <div className="bg-gradient-to-br from-[#5A9AB4] to-[#3E7C92] p-8 md:p-10 rounded-2xl text-white mb-8">
+            <p className="text-xl md:text-2xl leading-relaxed">
+              "{renderWithBreaks('about.philosophy.quote')}"
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            <div className="bg-[#F7F9F9] p-4 rounded-lg">
+              <p className="font-semibold text-[#5A9AB4] text-sm">📚 {t('about.philosophy.theoryInformed')}</p>
+            </div>
+            <div className="bg-[#F7F9F9] p-4 rounded-lg">
+              <p className="font-semibold text-[#5A9AB4] text-sm">🧠 {t('about.philosophy.personalityBased')}</p>
+            </div>
+            <div className="bg-[#F7F9F9] p-4 rounded-lg">
+              <p className="font-semibold text-[#5A9AB4] text-sm">💡 {t('about.philosophy.experienceDriven')}</p>
+            </div>
+            <div className="bg-[#F7F9F9] p-4 rounded-lg">
+              <p className="font-semibold text-[#5A9AB4] text-sm">🤝 {t('about.philosophy.humanCentred')}</p>
+            </div>
+          </div>
+
+          <p className="text-lg text-[#1f2937] mb-2">
+            {t('about.philosophy.tagline1')}
+          </p>
+          <p className="text-2xl font-semibold text-[#5A9AB4]">
+            {t('about.philosophy.tagline2')}
+          </p>
         </div>
       </section>
 
