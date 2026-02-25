@@ -54,8 +54,10 @@ export default function Home() {
                   src="/images/Diana - All Souls Library.png"
                   alt="Diana Lee at All Souls Library, Oxford"
                   fill
+                  sizes="(max-width: 768px) 0vw, (max-width: 1024px) 50vw, 40vw"
                   className="rounded-2xl shadow-xl object-cover object-[center_80%]"
                   priority
+                  quality={85}
                 />
               </div>
             </FadeIn>

@@ -36,6 +36,8 @@ export default function ExposureGallery({ items }: ExposureGalleryProps) {
                   src={item.image}
                   alt={item.title}
                   fill
+                  loading="lazy"
+                  sizes="320px"
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
@@ -83,6 +85,8 @@ export default function ExposureGallery({ items }: ExposureGalleryProps) {
                   src={selectedImage.image}
                   alt={selectedImage.title}
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  quality={90}
                   className="object-cover"
                 />
               </div>

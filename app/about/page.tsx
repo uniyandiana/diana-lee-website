@@ -48,8 +48,10 @@ export default function About() {
                   src="/images/Diana Lee - Professional Portrait (Oxford Reuben College).jpg"
                   alt="Diana Lee at Oxford Reuben College"
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw"
                   className="rounded-2xl shadow-lg object-cover"
                   priority
+                  quality={85}
                 />
               </div>
             </div>

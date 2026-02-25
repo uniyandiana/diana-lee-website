@@ -169,6 +169,8 @@ export default function Services() {
                     alt={service.title}
                     width={600}
                     height={400}
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                     className="w-full h-full object-cover object-[center_25%] group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
@@ -228,6 +230,8 @@ export default function Services() {
                     alt={service.title}
                     width={600}
                     height={400}
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                     className="w-full h-full object-cover object-[center_25%] group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
