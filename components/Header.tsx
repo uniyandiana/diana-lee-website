@@ -19,19 +19,20 @@ export default function Header() {
   ];
 
   return (
-    <header className="bg-white border-b border-[#F7F9F9] sticky top-0 z-50 shadow-sm">
-      <nav className="container-custom py-3 sm:py-4">
+    <header className="bg-white border-b border-[#F7F9F9] sticky top-0 z-50 shadow-sm" role="banner">
+      <nav className="container-custom py-3 sm:py-4" aria-label="Main navigation">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Logo />
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
+          <div className="hidden lg:flex items-center space-x-6 xl:space-x-8" role="menubar">
             {navigation.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-[#1f2937] hover:text-[#5A9AB4] transition-colors font-medium text-base"
+                className="text-[#1f2937] hover:text-[#5A9AB4] transition-colors font-medium text-base focus:outline-none focus:ring-2 focus:ring-[#5A9AB4] focus:ring-offset-2 rounded-md px-2 py-1"
+                role="menuitem"
               >
                 {item.name}
               </Link>
@@ -42,8 +43,10 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 text-[#1f2937] min-h-[44px] min-w-[44px] flex items-center justify-center"
-            aria-label="Toggle menu"
+            className="lg:hidden p-2 text-[#1f2937] min-h-[44px] min-w-[44px] flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-[#5A9AB4] rounded-lg"
+            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
           >
             <svg
               className="w-7 h-7"
@@ -53,6 +56,7 @@ export default function Header() {
               strokeWidth="2"
               viewBox="0 0 24 24"
               stroke="currentColor"
+              aria-hidden="true"
             >
               {isMenuOpen ? (
                 <path d="M6 18L18 6M6 6l12 12" />
@@ -65,13 +69,19 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden mt-4 pb-2 space-y-1">
+          <div
+            id="mobile-menu"
+            className="lg:hidden mt-4 pb-2 space-y-1"
+            role="menu"
+            aria-label="Mobile navigation menu"
+          >
             {navigation.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="block text-[#1f2937] hover:text-[#5A9AB4] hover:bg-[#F7F9F9] transition-colors font-medium py-3 px-4 rounded-lg text-base min-h-[44px] flex items-center"
+                className="block text-[#1f2937] hover:text-[#5A9AB4] hover:bg-[#F7F9F9] transition-colors font-medium py-3 px-4 rounded-lg text-base min-h-[44px] flex items-center focus:outline-none focus:ring-2 focus:ring-[#5A9AB4]"
                 onClick={() => setIsMenuOpen(false)}
+                role="menuitem"
               >
                 {item.name}
               </Link>
