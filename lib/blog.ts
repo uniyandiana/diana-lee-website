@@ -61,8 +61,16 @@ export function getAllBlogPosts(): BlogPost[] {
       const fileContents = fs.readFileSync(fullPath, 'utf8');
       const { title, category, readingTime, excerpt, content } = parseMarkdown(fileContents);
 
+      // Detect language and extract number from filename
+      const isChinesePost = fileName.startsWith('zh-');
+      const language = isChinesePost ? 'zh' : 'en';
+
       // Extract number from filename for date ordering (01, 02, etc.)
-      const fileNumber = parseInt(fileName.split('-')[0]);
+      // For Chinese posts: zh-01-title.md -> parts = ['zh', '01', 'title.md']
+      // For English posts: 01-title.md -> parts = ['01', 'title.md']
+      const parts = fileName.split('-');
+      const fileNumber = parseInt(isChinesePost ? parts[1] : parts[0]);
+
       // Create dates from Dec 2024 onwards, newest first
       const publishedAt = new Date(2024, 11, 31 - fileNumber).toISOString();
 
@@ -74,7 +82,7 @@ export function getAllBlogPosts(): BlogPost[] {
         excerpt,
         content,
         publishedAt,
-        language: 'en'  // Default for markdown files
+        language
       };
     });
 
@@ -89,7 +97,14 @@ export function getBlogPost(slug: string): BlogPost | null {
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const { title, category, readingTime, excerpt, content } = parseMarkdown(fileContents);
 
-    const fileNumber = parseInt(slug.split('-')[0]);
+    // Detect language and extract number from slug
+    const isChinesePost = slug.startsWith('zh-');
+    const language = isChinesePost ? 'zh' : 'en';
+
+    // Extract number from slug for date ordering
+    const parts = slug.split('-');
+    const fileNumber = parseInt(isChinesePost ? parts[1] : parts[0]);
+
     const publishedAt = new Date(2024, 11, 31 - fileNumber).toISOString();
 
     return {
@@ -100,7 +115,7 @@ export function getBlogPost(slug: string): BlogPost | null {
       excerpt,
       content,
       publishedAt,
-      language: 'en'  // Default for markdown files
+      language
     };
   } catch {
     return null;
