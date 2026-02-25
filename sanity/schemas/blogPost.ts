@@ -75,17 +75,33 @@ export default defineType({
       description: 'Show on homepage?',
       initialValue: false,
     }),
+    defineField({
+      name: 'language',
+      title: 'Language',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'English', value: 'en' },
+          { title: '繁體中文', value: 'zh' },
+        ],
+        layout: 'radio',
+      },
+      initialValue: 'en',
+      validation: (Rule) => Rule.required(),
+    }),
   ],
   preview: {
     select: {
       title: 'title',
       category: 'category',
       date: 'publishedAt',
+      language: 'language',
     },
     prepare(selection) {
-      const { title, category, date } = selection
+      const { title, category, date, language } = selection
+      const langEmoji = language === 'zh' ? '🇨🇳' : '🇬🇧'
       return {
-        title: title,
+        title: `${langEmoji} ${title}`,
         subtitle: `${category} - ${new Date(date).toLocaleDateString()}`,
       }
     },

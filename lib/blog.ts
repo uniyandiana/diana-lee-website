@@ -9,6 +9,8 @@ export interface BlogPost {
   excerpt: string;
   content: string;
   publishedAt: string;
+  language?: 'en' | 'zh';  // Optional for backward compatibility
+  _id?: string;  // For Sanity posts
 }
 
 const postsDirectory = path.join(process.cwd(), 'blog-content');
@@ -71,7 +73,8 @@ export function getAllBlogPosts(): BlogPost[] {
         readingTime,
         excerpt,
         content,
-        publishedAt
+        publishedAt,
+        language: 'en'  // Default for markdown files
       };
     });
 
@@ -96,7 +99,8 @@ export function getBlogPost(slug: string): BlogPost | null {
       readingTime,
       excerpt,
       content,
-      publishedAt
+      publishedAt,
+      language: 'en'  // Default for markdown files
     };
   } catch {
     return null;
