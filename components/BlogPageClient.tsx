@@ -111,7 +111,7 @@ export default function BlogPageClient({ initialBlogPosts }: BlogPageClientProps
               const postSlug = post.slug?.current || post.slug;
               const postId = post._id || post.slug;
               const postLang = post.language || 'en';
-              const langBadge = postLang === 'zh' ? '🇨🇳' : '🇬🇧';
+              const langBadge = postLang === 'zh' ? '🇭🇰' : '🇬🇧';
 
               return (
                 <Link key={postId} href={`/blog/${postSlug}`} className="group">

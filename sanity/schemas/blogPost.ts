@@ -99,7 +99,7 @@ export default defineType({
     },
     prepare(selection) {
       const { title, category, date, language } = selection
-      const langEmoji = language === 'zh' ? '🇨🇳' : '🇬🇧'
+      const langEmoji = language === 'zh' ? '🇭🇰' : '🇬🇧'
       return {
         title: `${langEmoji} ${title}`,
         subtitle: `${category} - ${new Date(date).toLocaleDateString()}`,
