@@ -28,28 +28,28 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="min-h-[80vh] flex items-center bg-gradient-to-br from-[#F7F9F9] to-[#FFFEFA] relative overflow-hidden">
+      <section className="min-h-[70vh] sm:min-h-[80vh] flex items-center bg-gradient-to-br from-[#F7F9F9] to-[#FFFEFA] relative overflow-hidden py-12 sm:py-0">
         <div className="container-custom">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             <FadeIn direction="up" delay={100}>
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 text-[#1f2937]">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-[#1f2937] leading-tight">
                 {t('home.hero.title')}<br />
                 <span className="gradient-text">{t('home.hero.titleHighlight')}</span>
               </h1>
-              <p className="text-xl md:text-2xl mb-8 text-[#6b7280]">
+              <p className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 text-[#6b7280]">
                 {t('home.hero.subtitle')}
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/services" className="btn-primary text-center hover:scale-105 transition-transform">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <Link href="/services" className="btn-primary text-center hover:scale-105 transition-transform py-4 text-base sm:text-lg">
                   {t('home.hero.ctaServices')}
                 </Link>
-                <Link href="/contact" className="btn-secondary text-center hover:scale-105 transition-transform">
+                <Link href="/contact" className="btn-secondary text-center hover:scale-105 transition-transform py-4 text-base sm:text-lg">
                   {t('home.hero.ctaContact')}
                 </Link>
               </div>
             </FadeIn>
             <FadeIn direction="right" delay={300} className="hidden md:block">
-              <div className="relative w-full h-[480px]">
+              <div className="relative w-full h-[400px] lg:h-[480px]">
                 <Image
                   src="/images/Diana - All Souls Library.png"
                   alt="Diana Lee at All Souls Library, Oxford"
@@ -67,27 +67,27 @@ export default function Home() {
       <section className="section-padding bg-white">
         <div className="container-custom max-w-5xl">
           <FadeIn direction="up">
-            <h2 className="text-center mb-12">{t('home.whatIDo.title')}</h2>
+            <h2 className="text-center mb-8 sm:mb-12 text-2xl sm:text-3xl md:text-4xl">{t('home.whatIDo.title')}</h2>
           </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
             <FadeIn direction="up" delay={100}>
-              <div className="text-center group hover:transform hover:scale-105 transition-all duration-300">
-                <div className="w-16 h-16 bg-[#F7F9F9] rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-[#5A9AB4] transition-colors">
-                  <svg className="w-8 h-8 text-[#5A9AB4] group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="text-center group hover:transform hover:scale-105 transition-all duration-300 p-4">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#F7F9F9] rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:bg-[#5A9AB4] transition-colors">
+                  <svg className="w-7 h-7 sm:w-8 sm:h-8 text-[#5A9AB4] group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-[#1f2937]">{t('home.whatIDo.careerClarity.title')}</h3>
-                <p className="text-[#6b7280]">
+                <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-[#1f2937]">{t('home.whatIDo.careerClarity.title')}</h3>
+                <p className="text-sm sm:text-base text-[#6b7280]">
                   {renderWithBreaks('home.whatIDo.careerClarity.description')}
                 </p>
               </div>
             </FadeIn>
 
             <FadeIn direction="up" delay={200}>
-              <div className="text-center group hover:transform hover:scale-105 transition-all duration-300">
-                <div className="w-16 h-16 bg-[#F7F9F9] rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-[#5A9AB4] transition-colors">
-                  <svg className="w-8 h-8 text-[#5A9AB4] group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="text-center group hover:transform hover:scale-105 transition-all duration-300 p-4">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#F7F9F9] rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:bg-[#5A9AB4] transition-colors">
+                  <svg className="w-7 h-7 sm:w-8 sm:h-8 text-[#5A9AB4] group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
                   </svg>
                 </div>
@@ -99,9 +99,9 @@ export default function Home() {
             </FadeIn>
 
             <FadeIn direction="up" delay={300}>
-              <div className="text-center group hover:transform hover:scale-105 transition-all duration-300">
-                <div className="w-16 h-16 bg-[#F7F9F9] rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-[#5A9AB4] transition-colors">
-                  <svg className="w-8 h-8 text-[#5A9AB4] group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="text-center group hover:transform hover:scale-105 transition-all duration-300 p-4">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#F7F9F9] rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:bg-[#5A9AB4] transition-colors">
+                  <svg className="w-7 h-7 sm:w-8 sm:h-8 text-[#5A9AB4] group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
                   </svg>
                 </div>

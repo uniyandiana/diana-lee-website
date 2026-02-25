@@ -64,8 +64,8 @@ export default function Contact() {
       <section className="section-padding bg-gradient-to-br from-[#FFFEFA] to-[#F7F9F9]">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="mb-6">{t('contact.hero.title')}</h1>
-            <p className="text-xl md:text-2xl text-[#6b7280]">
+            <h1 className="mb-4 sm:mb-6 text-3xl sm:text-4xl md:text-5xl">{t('contact.hero.title')}</h1>
+            <p className="text-lg sm:text-xl md:text-2xl text-[#6b7280]">
               {t('contact.hero.subtitle')}
             </p>
           </div>
@@ -75,10 +75,10 @@ export default function Contact() {
       {/* Contact Section */}
       <section className="section-padding bg-white">
         <div className="container-custom max-w-6xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
             {/* Contact Form */}
             <div>
-              <h2 className="text-3xl mb-6">{t('contact.form.title')}</h2>
+              <h2 className="text-2xl sm:text-3xl mb-4 sm:mb-6">{t('contact.form.title')}</h2>
 
               {submitted && (
                 <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg text-green-800">
@@ -92,9 +92,9 @@ export default function Contact() {
                 </div>
               )}
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-[#1f2937] mb-2">
+                  <label htmlFor="name" className="block text-sm sm:text-base font-medium text-[#1f2937] mb-2">
                     {t('contact.form.nameLabel')}
                   </label>
                   <input
@@ -104,13 +104,13 @@ export default function Contact() {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-[#F7F9F9] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#5A9AB4] focus:border-transparent"
+                    className="w-full px-4 py-3 sm:py-4 border border-[#E6EAEA] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#5A9AB4] focus:border-transparent text-base min-h-[48px]"
                     placeholder={t('contact.form.namePlaceholder')}
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-[#1f2937] mb-2">
+                  <label htmlFor="email" className="block text-sm sm:text-base font-medium text-[#1f2937] mb-2">
                     {t('contact.form.emailLabel')}
                   </label>
                   <input
@@ -120,13 +120,13 @@ export default function Contact() {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-[#F7F9F9] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#5A9AB4] focus:border-transparent"
+                    className="w-full px-4 py-3 sm:py-4 border border-[#E6EAEA] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#5A9AB4] focus:border-transparent text-base min-h-[48px]"
                     placeholder={t('contact.form.emailPlaceholder')}
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-[#1f2937] mb-2">
+                  <label htmlFor="subject" className="block text-sm sm:text-base font-medium text-[#1f2937] mb-2">
                     {t('contact.form.subjectLabel')}
                   </label>
                   <select
@@ -135,7 +135,7 @@ export default function Contact() {
                     required
                     value={formData.subject}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-[#F7F9F9] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#5A9AB4] focus:border-transparent"
+                    className="w-full px-4 py-3 sm:py-4 border border-[#E6EAEA] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#5A9AB4] focus:border-transparent text-base min-h-[48px]"
                   >
                     <option value="">{t('contact.form.subjectPlaceholder')}</option>
                     <option value="workshop">{t('contact.form.subjectWorkshop')}</option>
@@ -148,7 +148,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-[#1f2937] mb-2">
+                  <label htmlFor="message" className="block text-sm sm:text-base font-medium text-[#1f2937] mb-2">
                     {t('contact.form.messageLabel')}
                   </label>
                   <textarea
@@ -158,7 +158,7 @@ export default function Contact() {
                     value={formData.message}
                     onChange={handleChange}
                     rows={6}
-                    className="w-full px-4 py-3 border border-[#F7F9F9] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#5A9AB4] focus:border-transparent resize-none"
+                    className="w-full px-4 py-3 sm:py-4 border border-[#E6EAEA] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#5A9AB4] focus:border-transparent resize-none text-base"
                     placeholder={t('contact.form.messagePlaceholder')}
                   ></textarea>
                 </div>
@@ -185,7 +185,7 @@ export default function Contact() {
 
             {/* Contact Information */}
             <div>
-              <h2 className="text-3xl mb-6">{t('contact.info.title')}</h2>
+              <h2 className="text-2xl sm:text-3xl mb-4 sm:mb-6">{t('contact.info.title')}</h2>
 
               <div className="space-y-6 mb-8">
                 <div className="flex items-start gap-4">

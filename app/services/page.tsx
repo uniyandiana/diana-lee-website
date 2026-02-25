@@ -143,8 +143,8 @@ export default function Services() {
       <section className="py-12 md:py-16 bg-gradient-to-br from-[#FFFEFA] to-[#F7F9F9]">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="mb-4">{t('services.hero.title')}</h1>
-            <p className="text-xl text-[#6b7280]">
+            <h1 className="mb-3 sm:mb-4 text-3xl sm:text-4xl md:text-5xl">{t('services.hero.title')}</h1>
+            <p className="text-lg sm:text-xl text-[#6b7280]">
               {t('services.hero.subtitle')}
             </p>
           </div>
@@ -163,7 +163,7 @@ export default function Services() {
                 className="bg-white rounded-xl border-2 border-[#F7F9F9] hover:border-[#5A9AB4] transition-all duration-300 overflow-hidden group"
               >
                 {/* Image */}
-                <div className="relative h-56 overflow-hidden">
+                <div className="relative h-48 sm:h-56 overflow-hidden">
                   <Image
                     src={service.image}
                     alt={service.title}
@@ -174,9 +174,9 @@ export default function Services() {
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
-                  <h3 className="text-2xl font-bold mb-3 text-[#1f2937]">{service.title}</h3>
-                  <p className="text-[#6b7280] mb-4 leading-relaxed">
+                <div className="p-5 sm:p-6">
+                  <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-[#1f2937]">{service.title}</h3>
+                  <p className="text-sm sm:text-base text-[#6b7280] mb-3 sm:mb-4 leading-relaxed">
                     {service.description}
                   </p>
 
@@ -222,7 +222,7 @@ export default function Services() {
                 className="bg-white rounded-xl border-2 border-[#F7F9F9] hover:border-[#5A9AB4] transition-all duration-300 overflow-hidden group"
               >
                 {/* Image */}
-                <div className="relative h-56 overflow-hidden">
+                <div className="relative h-48 sm:h-56 overflow-hidden">
                   <Image
                     src={service.image}
                     alt={service.title}
@@ -233,9 +233,9 @@ export default function Services() {
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
-                  <h3 className="text-2xl font-bold mb-3 text-[#1f2937]">{service.title}</h3>
-                  <p className="text-[#6b7280] mb-4 leading-relaxed">
+                <div className="p-5 sm:p-6">
+                  <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-[#1f2937]">{service.title}</h3>
+                  <p className="text-sm sm:text-base text-[#6b7280] mb-3 sm:mb-4 leading-relaxed">
                     {service.description}
                   </p>
 

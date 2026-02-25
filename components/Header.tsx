@@ -20,18 +20,18 @@ export default function Header() {
 
   return (
     <header className="bg-white border-b border-[#F7F9F9] sticky top-0 z-50 shadow-sm">
-      <nav className="container-custom py-4">
+      <nav className="container-custom py-3 sm:py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Logo />
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
             {navigation.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-[#1f2937] hover:text-[#5A9AB4] transition-colors font-medium"
+                className="text-[#1f2937] hover:text-[#5A9AB4] transition-colors font-medium text-base"
               >
                 {item.name}
               </Link>
@@ -42,11 +42,11 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 text-[#1f2937]"
+            className="lg:hidden p-2 text-[#1f2937] min-h-[44px] min-w-[44px] flex items-center justify-center"
             aria-label="Toggle menu"
           >
             <svg
-              className="w-6 h-6"
+              className="w-7 h-7"
               fill="none"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -65,18 +65,18 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden mt-4 pb-4 space-y-3">
+          <div className="lg:hidden mt-4 pb-2 space-y-1">
             {navigation.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="block text-[#1f2937] hover:text-[#5A9AB4] transition-colors font-medium py-2"
+                className="block text-[#1f2937] hover:text-[#5A9AB4] hover:bg-[#F7F9F9] transition-colors font-medium py-3 px-4 rounded-lg text-base min-h-[44px] flex items-center"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
               </Link>
             ))}
-            <div className="pt-3 border-t border-[#F7F9F9]">
+            <div className="pt-2 border-t border-[#F7F9F9] mt-2">
               <LanguageSwitcher />
             </div>
           </div>

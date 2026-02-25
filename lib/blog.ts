@@ -63,7 +63,7 @@ export function getAllBlogPosts(): BlogPost[] {
 
       // Detect language and extract number from filename
       const isChinesePost = fileName.startsWith('zh-');
-      const language = isChinesePost ? 'zh' : 'en';
+      const language: 'en' | 'zh' = isChinesePost ? 'zh' : 'en';
 
       // Extract number from filename for date ordering (01, 02, etc.)
       // For Chinese posts: zh-01-title.md -> parts = ['zh', '01', 'title.md']
@@ -99,7 +99,7 @@ export function getBlogPost(slug: string): BlogPost | null {
 
     // Detect language and extract number from slug
     const isChinesePost = slug.startsWith('zh-');
-    const language = isChinesePost ? 'zh' : 'en';
+    const language: 'en' | 'zh' = isChinesePost ? 'zh' : 'en';
 
     // Extract number from slug for date ordering
     const parts = slug.split('-');
