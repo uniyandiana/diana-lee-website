@@ -5,7 +5,7 @@ export default function Logo() {
   return (
     <Link href="/" className="group relative block">
       <Image
-        src="/images/Diana Lee Logo 1.png"
+        src="/images/diana-lee-logo.png"
         alt="Diana Lee"
         width={150}
         height={45}
