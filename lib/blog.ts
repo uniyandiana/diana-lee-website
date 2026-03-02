@@ -72,12 +72,13 @@ export function getAllBlogPosts(): BlogPost[] {
       const fileNumber = parseInt(isChinesePost ? parts[1] : parts[0]);
 
       // Create dates from Dec 2024 onwards, newest first
-      // Ensure valid date (day must be 1-31, fileNumber must be valid)
+      // Higher file numbers = more recent dates
+      // 01-xxx.md = Dec 1 (oldest), 15-xxx.md = Dec 15 (newest)
       let publishedAt;
       if (isNaN(fileNumber) || fileNumber < 1) {
         publishedAt = new Date().toISOString(); // Default to current date if invalid
       } else {
-        const day = Math.max(1, Math.min(31, 31 - fileNumber));
+        const day = Math.max(1, Math.min(31, fileNumber));
         publishedAt = new Date(2024, 11, day).toISOString();
       }
 
@@ -116,7 +117,7 @@ export function getBlogPost(slug: string): BlogPost | null {
     if (isNaN(fileNumber) || fileNumber < 1) {
       publishedAt = new Date().toISOString();
     } else {
-      const day = Math.max(1, Math.min(31, 31 - fileNumber));
+      const day = Math.max(1, Math.min(31, fileNumber));
       publishedAt = new Date(2024, 11, day).toISOString();
     }
 

@@ -1,18 +1,46 @@
 import { getAllBlogPosts, getBlogPost } from '@/lib/blog';
+import { sanityFetch } from '@/lib/sanity';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
 
 export async function generateStaticParams() {
-  const posts = getAllBlogPosts();
-  return posts.map((post) => ({
+  const markdownPosts = getAllBlogPosts();
+
+  const sanityPosts = await sanityFetch({
+    query: `*[_type == "blogPost"] { "slug": slug.current }`,
+  });
+
+  return [...markdownPosts, ...sanityPosts].map((post) => ({
     slug: post.slug,
   }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const post = getBlogPost(slug);
+
+  // Try markdown first
+  let post = getBlogPost(slug);
+
+  // If not found in markdown, try Sanity
+  if (!post) {
+    const sanityPosts = await sanityFetch({
+      query: `*[_type == "blogPost" && slug.current == $slug][0] {
+        _id, title, slug, category, excerpt, publishedAt, content, language
+      }`,
+      params: { slug },
+    });
+
+    if (sanityPosts) {
+      post = {
+        ...sanityPosts,
+        slug: sanityPosts.slug?.current || slug,
+        readingTime: '5 min',
+        publishedAt: sanityPosts.publishedAt || new Date().toISOString(),
+        content: sanityPosts.excerpt || '',
+      };
+    }
+  }
 
   if (!post) {
     return {
@@ -28,7 +56,31 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const post = getBlogPost(slug);
+
+  // Try markdown first
+  let post = getBlogPost(slug);
+  let isMarkdown = true;
+
+  // If not found in markdown, try Sanity
+  if (!post) {
+    const sanityPost = await sanityFetch({
+      query: `*[_type == "blogPost" && slug.current == $slug][0] {
+        _id, title, slug, category, excerpt, publishedAt, content, language
+      }`,
+      params: { slug },
+    });
+
+    if (sanityPost) {
+      post = {
+        ...sanityPost,
+        slug: sanityPost.slug?.current || slug,
+        readingTime: '5 min',
+        publishedAt: sanityPost.publishedAt || new Date().toISOString(),
+        content: sanityPost.excerpt || '',
+      };
+      isMarkdown = false;
+    }
+  }
 
   if (!post) {
     notFound();
@@ -95,9 +147,13 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             prose-hr:border-[#F7F9F9] prose-hr:my-8
             prose-blockquote:border-l-4 prose-blockquote:border-[#5A9AB4] prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:text-[#6b7280]
           ">
-            <ReactMarkdown>
-              {post.content}
-            </ReactMarkdown>
+            {isMarkdown ? (
+              <ReactMarkdown>
+                {post.content}
+              </ReactMarkdown>
+            ) : (
+              <div className="whitespace-pre-wrap">{post.content}</div>
+            )}
           </article>
 
           {/* CTA */}

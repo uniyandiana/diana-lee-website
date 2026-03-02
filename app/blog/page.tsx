@@ -50,8 +50,10 @@ export default async function BlogPage() {
       };
     });
 
-  // Combine markdown and Sanity blog posts
-  const blogPosts = [...markdownPosts, ...processedSanityPosts];
+  // Combine markdown and Sanity blog posts, then sort by date (newest first)
+  const blogPosts = [...markdownPosts, ...processedSanityPosts].sort((a, b) =>
+    new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+  );
 
   return (
     <div>

@@ -52,8 +52,10 @@ export default async function Resources() {
       };
     });
 
-  // Combine markdown and Sanity blog posts
-  const blogPosts = [...markdownPosts, ...processedSanityPosts];
+  // Combine markdown and Sanity blog posts, then sort by date (newest first)
+  const blogPosts = [...markdownPosts, ...processedSanityPosts].sort((a, b) =>
+    new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+  );
 
   // Fetch resources from Sanity
   const sanityResources = await sanityFetch({
