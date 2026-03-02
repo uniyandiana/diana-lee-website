@@ -55,13 +55,23 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           <h1 className="mb-4">{post.title}</h1>
 
           <div className="flex items-center gap-4 text-[#6b7280] text-sm">
-            <span>{new Date(post.publishedAt).toLocaleDateString('en-GB', {
-              day: 'numeric',
-              month: 'long',
-              year: 'numeric'
-            })}</span>
+            <span>{(() => {
+              try {
+                const date = new Date(post.publishedAt);
+                if (isNaN(date.getTime())) {
+                  return 'Recently published';
+                }
+                return date.toLocaleDateString('en-GB', {
+                  day: 'numeric',
+                  month: 'long',
+                  year: 'numeric'
+                });
+              } catch {
+                return 'Recently published';
+              }
+            })()}</span>
             <span>•</span>
-            <span>{post.readingTime}</span>
+            <span>{post.readingTime || '5 min'}</span>
           </div>
         </div>
       </section>

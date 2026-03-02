@@ -54,7 +54,7 @@ function parseMarkdown(content: string) {
 export function getAllBlogPosts(): BlogPost[] {
   const fileNames = fs.readdirSync(postsDirectory);
   const posts = fileNames
-    .filter(fileName => fileName.endsWith('.md') && !fileName.startsWith('README'))
+    .filter(fileName => fileName.endsWith('.md') && !fileName.startsWith('README') && !fileName.startsWith('TEMPLATE'))
     .map(fileName => {
       const slug = fileName.replace(/\.md$/, '');
       const fullPath = path.join(postsDirectory, fileName);
@@ -72,7 +72,14 @@ export function getAllBlogPosts(): BlogPost[] {
       const fileNumber = parseInt(isChinesePost ? parts[1] : parts[0]);
 
       // Create dates from Dec 2024 onwards, newest first
-      const publishedAt = new Date(2024, 11, 31 - fileNumber).toISOString();
+      // Ensure valid date (day must be 1-31, fileNumber must be valid)
+      let publishedAt;
+      if (isNaN(fileNumber) || fileNumber < 1) {
+        publishedAt = new Date().toISOString(); // Default to current date if invalid
+      } else {
+        const day = Math.max(1, Math.min(31, 31 - fileNumber));
+        publishedAt = new Date(2024, 11, day).toISOString();
+      }
 
       return {
         slug,
@@ -105,7 +112,13 @@ export function getBlogPost(slug: string): BlogPost | null {
     const parts = slug.split('-');
     const fileNumber = parseInt(isChinesePost ? parts[1] : parts[0]);
 
-    const publishedAt = new Date(2024, 11, 31 - fileNumber).toISOString();
+    let publishedAt;
+    if (isNaN(fileNumber) || fileNumber < 1) {
+      publishedAt = new Date().toISOString();
+    } else {
+      const day = Math.max(1, Math.min(31, 31 - fileNumber));
+      publishedAt = new Date(2024, 11, day).toISOString();
+    }
 
     return {
       slug,
