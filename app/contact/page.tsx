@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import CalendlyWidget from "@/components/CalendlyWidget";
 
 export default function Contact() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const [formData, setFormData] = useState({
     name: "",
@@ -264,6 +265,42 @@ export default function Contact() {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Calendly Booking Section */}
+      <section className="section-padding bg-gradient-to-br from-[#F7F9F9] to-[#FFFEFA]">
+        <div className="container-custom max-w-4xl">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl mb-4">
+              {language === 'zh' ? '預約免費諮詢' : 'Book a Free Consultation'}
+            </h2>
+            <p className="text-lg sm:text-xl text-[#6b7280]">
+              {language === 'zh'
+                ? '選擇最適合您的時間，我們進行 30 分鐘的一對一諮詢'
+                : 'Choose a time that works for you for a 30-minute one-on-one consultation'}
+            </p>
+          </div>
+
+          {/* Calendly Inline Widget */}
+          <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+            <CalendlyWidget variant="inline" />
+          </div>
+
+          {/* Alternative: Direct Link */}
+          <div className="mt-6 text-center">
+            <p className="text-sm text-[#6b7280] mb-3">
+              {language === 'zh' ? '或使用此連結' : 'Or use this link'}
+            </p>
+            <a
+              href="https://calendly.com/dianaleetw/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#5A9AB4] hover:text-[#3E7C92] hover:underline font-medium"
+            >
+              calendly.com/dianaleetw/30min
+            </a>
           </div>
         </div>
       </section>
