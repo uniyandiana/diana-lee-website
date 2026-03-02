@@ -208,6 +208,46 @@
       "subtitle": "職涯發展和創業的免費工具、指南和反思（以下資源以英文為主）"
     }
   },
+  "opportunities": {
+    "hero": {
+      "title": "機會",
+      "subtitle": "為你的職涯和創業旅程精選的機會。涵蓋香港、英國及世界各地的活動、比賽、資助和資源。"
+    },
+    "currentTitle": "當前機會",
+    "previousTitle": "過往機會",
+    "noOpportunities": "目前暫無活動機會，請稍後再來查看！",
+    "regions": {
+      "hk": "香港",
+      "uk": "英國",
+      "international": "國際"
+    },
+    "types": {
+      "event": "活動",
+      "competition": "比賽",
+      "grant": "資助",
+      "resource": "資源",
+      "workshop": "工作坊",
+      "programme": "計劃"
+    },
+    "tags": {
+      "students": "學生",
+      "professionals": "專業人士",
+      "entrepreneurs": "創業者",
+      "tech": "科技",
+      "social-impact": "社會影響",
+      "creative": "創意產業",
+      "youth": "青年",
+      "women": "女性"
+    },
+    "labels": {
+      "endingSoon": "即將截止",
+      "expired": "已過期",
+      "more": "更多",
+      "eventDate": "活動日期：",
+      "deadline": "截止日期：",
+      "learnMore": "了解更多 →"
+    }
+  },
   "contact": {
     "hero": {
       "title": "聯絡我",

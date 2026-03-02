@@ -208,6 +208,46 @@
       "subtitle": "Free tools, guides, and reflections on career development and entrepreneurship"
     }
   },
+  "opportunities": {
+    "hero": {
+      "title": "Opportunities",
+      "subtitle": "Curated opportunities for your career and entrepreneurship journey. Events, competitions, grants, and resources across Hong Kong, UK, and beyond."
+    },
+    "currentTitle": "Current Opportunities",
+    "previousTitle": "Previous Opportunities",
+    "noOpportunities": "No active opportunities at the moment. Check back soon!",
+    "regions": {
+      "hk": "Hong Kong",
+      "uk": "UK",
+      "international": "International"
+    },
+    "types": {
+      "event": "Event",
+      "competition": "Competition",
+      "grant": "Grant",
+      "resource": "Resource",
+      "workshop": "Workshop",
+      "programme": "Programme"
+    },
+    "tags": {
+      "students": "Students",
+      "professionals": "Professionals",
+      "entrepreneurs": "Entrepreneurs",
+      "tech": "Tech",
+      "social-impact": "Social Impact",
+      "creative": "Creative Industries",
+      "youth": "Youth",
+      "women": "Women"
+    },
+    "labels": {
+      "endingSoon": "Ending Soon",
+      "expired": "Expired",
+      "more": "more",
+      "eventDate": "Event Date:",
+      "deadline": "Deadline:",
+      "learnMore": "Learn More →"
+    }
+  },
   "contact": {
     "hero": {
       "title": "Get in Touch",
