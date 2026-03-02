@@ -9,6 +9,8 @@ interface OpportunityFiltersProps {
   setSelectedRegion: (region: string) => void;
   selectedType: string;
   setSelectedType: (type: string) => void;
+  selectedLanguage: string;
+  setSelectedLanguage: (language: string) => void;
   selectedTags: string[];
   setSelectedTags: (tags: string[]) => void;
   onClearFilters: () => void;
@@ -22,6 +24,8 @@ export default function OpportunityFilters({
   setSelectedRegion,
   selectedType,
   setSelectedType,
+  selectedLanguage,
+  setSelectedLanguage,
   selectedTags,
   setSelectedTags,
   onClearFilters,
@@ -44,6 +48,12 @@ export default function OpportunityFilters({
     { value: 'resource', label: t('opportunities.types.resource') },
     { value: 'workshop', label: t('opportunities.types.workshop') },
     { value: 'programme', label: t('opportunities.types.programme') },
+  ];
+
+  const languages = [
+    { value: 'all', label: t('opportunities.filters.allLanguages') || 'All Languages' },
+    { value: 'en', label: t('opportunities.filters.englishOnly') || 'English Only' },
+    { value: 'zh', label: t('opportunities.filters.chineseOnly') || 'Chinese Only' },
   ];
 
   const availableTags = [
@@ -117,6 +127,28 @@ export default function OpportunityFilters({
               }`}
             >
               {type.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Language Filter */}
+      <div>
+        <h3 className="text-sm font-semibold text-[#1f2937] mb-2">
+          {t('opportunities.filters.language') || 'Language'}
+        </h3>
+        <div className="flex flex-wrap gap-2">
+          {languages.map((lang) => (
+            <button
+              key={lang.value}
+              onClick={() => setSelectedLanguage(lang.value)}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                selectedLanguage === lang.value
+                  ? 'bg-[#5A9AB4] text-white'
+                  : 'bg-[#F7F9F9] text-[#6b7280] hover:bg-[#E6EAEA]'
+              }`}
+            >
+              {lang.label}
             </button>
           ))}
         </div>

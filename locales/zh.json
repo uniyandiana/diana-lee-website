@@ -254,8 +254,12 @@
       "region": "地區",
       "type": "類型",
       "tags": "標籤",
+      "language": "語言",
       "allRegions": "所有地區",
       "allTypes": "所有類型",
+      "allLanguages": "所有語言",
+      "englishOnly": "僅限英文",
+      "chineseOnly": "僅限中文",
       "clearAll": "清除所有篩選",
       "noResults": "找不到符合你的篩選條件的機會。"
     },

@@ -254,8 +254,12 @@
       "region": "Region",
       "type": "Type",
       "tags": "Tags",
+      "language": "Language",
       "allRegions": "All Regions",
       "allTypes": "All Types",
+      "allLanguages": "All Languages",
+      "englishOnly": "English Only",
+      "chineseOnly": "Chinese Only",
       "clearAll": "Clear all filters",
       "noResults": "No opportunities found matching your filters."
     },

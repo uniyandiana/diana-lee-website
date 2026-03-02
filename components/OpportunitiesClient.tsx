@@ -36,16 +36,18 @@ export default function OpportunitiesClient({
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedRegion, setSelectedRegion] = useState('all');
   const [selectedType, setSelectedType] = useState('all');
+  const [selectedLanguage, setSelectedLanguage] = useState('all');
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
   // Check if filters are active
-  const hasActiveFilters = searchQuery !== '' || selectedRegion !== 'all' || selectedType !== 'all' || selectedTags.length > 0;
+  const hasActiveFilters = searchQuery !== '' || selectedRegion !== 'all' || selectedType !== 'all' || selectedLanguage !== 'all' || selectedTags.length > 0;
 
   // Clear all filters
   const clearFilters = () => {
     setSearchQuery('');
     setSelectedRegion('all');
     setSelectedType('all');
+    setSelectedLanguage('all');
     setSelectedTags([]);
   };
 
@@ -66,6 +68,12 @@ export default function OpportunitiesClient({
 
       // Type filter
       if (selectedType !== 'all' && opp.type !== selectedType) return false;
+
+      // Language filter
+      if (selectedLanguage !== 'all') {
+        if (selectedLanguage === 'en' && opp.language !== 'en' && opp.language !== 'both') return false;
+        if (selectedLanguage === 'zh' && opp.language !== 'zh' && opp.language !== 'both') return false;
+      }
 
       // Tags filter (if any selected tags, opportunity must have at least one matching tag)
       if (selectedTags.length > 0) {
@@ -101,6 +109,8 @@ export default function OpportunitiesClient({
               setSelectedRegion={setSelectedRegion}
               selectedType={selectedType}
               setSelectedType={setSelectedType}
+              selectedLanguage={selectedLanguage}
+              setSelectedLanguage={setSelectedLanguage}
               selectedTags={selectedTags}
               setSelectedTags={setSelectedTags}
               onClearFilters={clearFilters}
