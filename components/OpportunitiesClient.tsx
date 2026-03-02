@@ -149,6 +149,8 @@ function OpportunityCard({ opportunity, expired = false }: { opportunity: Opport
             components={{
               block: {
                 normal: ({ children }) => <span className="inline">{children} </span>,
+                h2: ({ children }) => <strong className="font-bold text-base inline">{children} </strong>,
+                h3: ({ children }) => <strong className="font-semibold inline">{children} </strong>,
               },
               list: {
                 bullet: ({ children }) => <ul className="list-disc ml-4 inline">{children}</ul>,
