@@ -201,8 +201,15 @@ export default function OpportunityDetailClient({ opportunity }: OpportunityDeta
             </div>
           )}
 
+          {/* Disclaimer */}
+          <div className="mt-12 p-6 bg-[#FFFEFA] border-l-4 border-[#F6C98D] rounded-r-lg">
+            <p className="text-sm text-[#6b7280] leading-relaxed">
+              {t('opportunities.detail.disclaimer')}
+            </p>
+          </div>
+
           {/* Back to Opportunities */}
-          <div className="mt-12 text-center">
+          <div className="mt-8 text-center">
             <Link
               href="/opportunities"
               className="text-[#5A9AB4] hover:text-[#3E7C92] inline-flex items-center gap-2"
