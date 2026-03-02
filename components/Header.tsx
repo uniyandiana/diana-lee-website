@@ -15,6 +15,7 @@ export default function Header() {
     { name: t('nav.about'), href: "/about" },
     { name: t('nav.services'), href: "/services" },
     { name: t('nav.resources'), href: "/resources" },
+    { name: t('nav.opportunities'), href: "/opportunities" },
     { name: t('nav.contact'), href: "/contact" },
   ];
 
