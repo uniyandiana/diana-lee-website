@@ -1,0 +1,17 @@
+{
+  "name": "Diana Lee - Career Development & Enterprise Education",
+  "short_name": "Diana Lee",
+  "description": "Empowering individuals to turn ideas into impact through career clarity and enterprise education",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#5A9AB4",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

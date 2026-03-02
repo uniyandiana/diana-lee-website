@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180">
+  <!-- Background with rounded corners for iOS -->
+  <rect width="180" height="180" rx="40" fill="#5A9AB4"/>
+
+  <!-- Letter D (scaled for larger icon) -->
+  <path d="M 53 50 L 53 130 L 84 130 C 105 130 119 116 119 90 C 119 64 105 50 84 50 Z M 67 64 L 81 64 C 95 64 105 74 105 90 C 105 106 95 116 81 116 L 67 116 Z" fill="white"/>
+
+  <!-- Accent dot -->
+  <circle cx="133" cy="50" r="12" fill="#F6C98D"/>
+</svg>
