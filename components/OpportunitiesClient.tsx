@@ -2,6 +2,7 @@
 
 import { useLanguage } from "@/contexts/LanguageContext";
 import { PortableText } from '@portabletext/react';
+import Link from 'next/link';
 
 interface Opportunity {
   _id: string;
@@ -210,19 +211,16 @@ function OpportunityCard({ opportunity, expired = false }: { opportunity: Opport
         </div>
 
         {/* CTA Button */}
-        <a
-          href={opportunity.url}
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          href={expired ? '#' : `/opportunities/${opportunity.slug?.current || opportunity.slug}`}
           className={`block w-full text-center py-2 px-4 rounded-lg font-semibold transition-colors ${
             expired
-              ? 'bg-[#E0E0E0] text-[#757575] cursor-not-allowed'
+              ? 'bg-[#E0E0E0] text-[#757575] cursor-not-allowed pointer-events-none'
               : 'bg-white border-2 border-[#5A9AB4] text-[#5A9AB4] hover:bg-[#5A9AB4] hover:text-white'
           }`}
-          {...(expired && { onClick: (e) => e.preventDefault() })}
         >
           {expired ? t('opportunities.labels.expired') : t('opportunities.labels.learnMore')}
-        </a>
+        </Link>
       </div>
     </div>
   );

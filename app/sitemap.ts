@@ -71,5 +71,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...blogPosts];
+  // Get opportunities
+  const opportunities = await sanityFetch({
+    query: `*[_type == "opportunity"] {
+      "slug": slug.current,
+      deadline,
+      _updatedAt
+    }`,
+  });
+
+  // Create opportunity URLs
+  const opportunityPages = opportunities.map((opp: any) => ({
+    url: `${baseUrl}/opportunities/${opp.slug}`,
+    lastModified: new Date(opp._updatedAt || new Date()),
+    changeFrequency: 'weekly' as const,
+    priority: 0.8,
+  }));
+
+  return [...staticPages, ...blogPosts, ...opportunityPages];
 }
