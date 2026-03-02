@@ -1,12 +1,13 @@
 'use client';
 
 import { useLanguage } from "@/contexts/LanguageContext";
+import { PortableText } from '@portabletext/react';
 
 interface Opportunity {
   _id: string;
   title: string;
   slug: any;
-  description: string;
+  description: any; // Block content from Sanity
   url: string;
   type: string;
   region: string;
@@ -142,9 +143,39 @@ function OpportunityCard({ opportunity, expired = false }: { opportunity: Opport
         </h3>
 
         {/* Description */}
-        <p className="text-[#6b7280] text-sm mb-4 line-clamp-3">
-          {opportunity.description}
-        </p>
+        <div className="text-[#6b7280] text-sm mb-4 line-clamp-3">
+          <PortableText
+            value={opportunity.description}
+            components={{
+              block: {
+                normal: ({ children }) => <span className="inline">{children} </span>,
+              },
+              list: {
+                bullet: ({ children }) => <ul className="list-disc ml-4 inline">{children}</ul>,
+                number: ({ children }) => <ol className="list-decimal ml-4 inline">{children}</ol>,
+              },
+              listItem: {
+                bullet: ({ children }) => <li className="inline">{children}</li>,
+                number: ({ children }) => <li className="inline">{children}</li>,
+              },
+              marks: {
+                strong: ({ children }) => <strong className="font-semibold">{children}</strong>,
+                em: ({ children }) => <em className="italic">{children}</em>,
+                link: ({ children, value }) => (
+                  <a
+                    href={value?.href}
+                    className="text-[#5A9AB4] hover:underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    {children}
+                  </a>
+                ),
+              },
+            }}
+          />
+        </div>
 
         {/* Tags */}
         {opportunity.tags && opportunity.tags.length > 0 && (

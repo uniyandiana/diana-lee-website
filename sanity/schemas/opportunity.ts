@@ -24,9 +24,41 @@ export default defineType({
     defineField({
       name: 'description',
       title: 'Description',
-      type: 'text',
-      rows: 4,
-      validation: (Rule) => Rule.required().max(300),
+      type: 'array',
+      description: 'Rich text description for the opportunity (keep it concise for card display)',
+      of: [
+        {
+          type: 'block',
+          styles: [
+            { title: 'Normal', value: 'normal' },
+          ],
+          lists: [
+            { title: 'Bullet', value: 'bullet' },
+            { title: 'Numbered', value: 'number' },
+          ],
+          marks: {
+            decorators: [
+              { title: 'Strong', value: 'strong' },
+              { title: 'Emphasis', value: 'em' },
+            ],
+            annotations: [
+              {
+                name: 'link',
+                type: 'object',
+                title: 'Link',
+                fields: [
+                  {
+                    name: 'href',
+                    type: 'url',
+                    title: 'URL',
+                  },
+                ],
+              },
+            ],
+          },
+        },
+      ],
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'url',
