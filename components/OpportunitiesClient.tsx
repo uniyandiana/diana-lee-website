@@ -99,69 +99,79 @@ export default function OpportunitiesClient({
 
       {/* Filters & Active Opportunities */}
       <section className="py-8 md:py-12 bg-white">
-        <div className="container-custom max-w-6xl">
-          {/* Filters */}
-          <div className="mb-6">
-            <OpportunityFilters
-              searchQuery={searchQuery}
-              setSearchQuery={setSearchQuery}
-              selectedRegion={selectedRegion}
-              setSelectedRegion={setSelectedRegion}
-              selectedType={selectedType}
-              setSelectedType={setSelectedType}
-              selectedLanguage={selectedLanguage}
-              setSelectedLanguage={setSelectedLanguage}
-              selectedTags={selectedTags}
-              setSelectedTags={setSelectedTags}
-              onClearFilters={clearFilters}
-              hasActiveFilters={hasActiveFilters}
-            />
-          </div>
+        <div className="container-custom max-w-7xl">
+          <div className="lg:flex lg:gap-8">
+            {/* Filters Sidebar - Desktop: sticky left, Mobile: stacked */}
+            <aside className="lg:w-64 lg:flex-shrink-0 mb-6 lg:mb-0">
+              <div className="lg:sticky lg:top-4">
+                <OpportunityFilters
+                  searchQuery={searchQuery}
+                  setSearchQuery={setSearchQuery}
+                  selectedRegion={selectedRegion}
+                  setSelectedRegion={setSelectedRegion}
+                  selectedType={selectedType}
+                  setSelectedType={setSelectedType}
+                  selectedLanguage={selectedLanguage}
+                  setSelectedLanguage={setSelectedLanguage}
+                  selectedTags={selectedTags}
+                  setSelectedTags={setSelectedTags}
+                  onClearFilters={clearFilters}
+                  hasActiveFilters={hasActiveFilters}
+                />
+              </div>
+            </aside>
 
-          {/* Results Header */}
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-[#1f2937]">
-            {t('opportunities.currentTitle')} ({filteredActiveOpportunities.length})
-          </h2>
+            {/* Main Content */}
+            <div className="lg:flex-1">
+              {/* Results Header */}
+              <h2 className="text-2xl md:text-3xl font-bold mb-6 text-[#1f2937]">
+                {t('opportunities.currentTitle')} ({filteredActiveOpportunities.length})
+              </h2>
 
-          {filteredActiveOpportunities.length === 0 ? (
-            <div className="text-center py-16">
-              <p className="text-[#6b7280] text-lg">
-                {hasActiveFilters
-                  ? t('opportunities.filters.noResults')
-                  : t('opportunities.noOpportunities')
-                }
-              </p>
-              {hasActiveFilters && (
-                <button
-                  onClick={clearFilters}
-                  className="mt-4 text-[#5A9AB4] hover:text-[#3E7C92] font-medium"
-                >
-                  {t('opportunities.filters.clearAll')}
-                </button>
+              {filteredActiveOpportunities.length === 0 ? (
+                <div className="text-center py-16">
+                  <p className="text-[#6b7280] text-lg">
+                    {hasActiveFilters
+                      ? t('opportunities.filters.noResults')
+                      : t('opportunities.noOpportunities')
+                    }
+                  </p>
+                  {hasActiveFilters && (
+                    <button
+                      onClick={clearFilters}
+                      className="mt-4 text-[#5A9AB4] hover:text-[#3E7C92] font-medium"
+                    >
+                      {t('opportunities.filters.clearAll')}
+                    </button>
+                  )}
+                </div>
+              ) : (
+                <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+                  {filteredActiveOpportunities.map((opportunity) => (
+                    <OpportunityCard key={opportunity._id} opportunity={opportunity} />
+                  ))}
+                </div>
               )}
             </div>
-          ) : (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredActiveOpportunities.map((opportunity) => (
-                <OpportunityCard key={opportunity._id} opportunity={opportunity} />
-              ))}
-            </div>
-          )}
+          </div>
         </div>
       </section>
 
       {/* Previous Opportunities */}
       {!hasActiveFilters && expiredOpportunities.length > 0 && (
         <section className="py-8 md:py-12 bg-[#F7F9F9]">
-          <div className="container-custom max-w-6xl">
-            <h2 className="text-2xl md:text-3xl font-bold mb-6 text-[#6b7280]">
-              {t('opportunities.previousTitle')} ({expiredOpportunities.length})
-            </h2>
+          <div className="container-custom max-w-7xl">
+            {/* Offset to align with main content (accounting for sidebar width) */}
+            <div className="lg:ml-72">
+              <h2 className="text-2xl md:text-3xl font-bold mb-6 text-[#6b7280]">
+                {t('opportunities.previousTitle')} ({expiredOpportunities.length})
+              </h2>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 opacity-60">
-              {expiredOpportunities.map((opportunity) => (
-                <OpportunityCard key={opportunity._id} opportunity={opportunity} expired />
-              ))}
+              <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6 opacity-60">
+                {expiredOpportunities.map((opportunity) => (
+                  <OpportunityCard key={opportunity._id} opportunity={opportunity} expired />
+                ))}
+              </div>
             </div>
           </div>
         </section>

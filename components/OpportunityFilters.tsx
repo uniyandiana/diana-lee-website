@@ -76,7 +76,7 @@ export default function OpportunityFilters({
   };
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-3">
       {/* Search */}
       <div>
         <input
@@ -84,21 +84,21 @@ export default function OpportunityFilters({
           placeholder={t('opportunities.filters.searchPlaceholder') || 'Search opportunities...'}
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full px-4 py-2.5 border border-[#E6EAEA] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#5A9AB4] focus:border-transparent"
+          className="w-full px-3 py-2 text-sm border border-[#E6EAEA] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#5A9AB4] focus:border-transparent"
         />
       </div>
 
       {/* Region Filter */}
       <div>
-        <h3 className="text-sm font-semibold text-[#1f2937] mb-2">
+        <h3 className="text-xs font-semibold text-[#1f2937] mb-1.5">
           {t('opportunities.filters.region') || 'Region'}
         </h3>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-1.5">
           {regions.map((region) => (
             <button
               key={region.value}
               onClick={() => setSelectedRegion(region.value)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+              className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
                 selectedRegion === region.value
                   ? 'bg-[#5A9AB4] text-white'
                   : 'bg-[#F7F9F9] text-[#6b7280] hover:bg-[#E6EAEA]'
@@ -112,15 +112,15 @@ export default function OpportunityFilters({
 
       {/* Type Filter */}
       <div>
-        <h3 className="text-sm font-semibold text-[#1f2937] mb-2">
+        <h3 className="text-xs font-semibold text-[#1f2937] mb-1.5">
           {t('opportunities.filters.type') || 'Type'}
         </h3>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-1.5">
           {types.map((type) => (
             <button
               key={type.value}
               onClick={() => setSelectedType(type.value)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+              className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
                 selectedType === type.value
                   ? 'bg-[#5A9AB4] text-white'
                   : 'bg-[#F7F9F9] text-[#6b7280] hover:bg-[#E6EAEA]'
@@ -134,15 +134,15 @@ export default function OpportunityFilters({
 
       {/* Language Filter */}
       <div>
-        <h3 className="text-sm font-semibold text-[#1f2937] mb-2">
+        <h3 className="text-xs font-semibold text-[#1f2937] mb-1.5">
           {t('opportunities.filters.language') || 'Language'}
         </h3>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-1.5">
           {languages.map((lang) => (
             <button
               key={lang.value}
               onClick={() => setSelectedLanguage(lang.value)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+              className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
                 selectedLanguage === lang.value
                   ? 'bg-[#5A9AB4] text-white'
                   : 'bg-[#F7F9F9] text-[#6b7280] hover:bg-[#E6EAEA]'
@@ -156,15 +156,15 @@ export default function OpportunityFilters({
 
       {/* Tags Filter */}
       <div>
-        <h3 className="text-sm font-semibold text-[#1f2937] mb-2">
+        <h3 className="text-xs font-semibold text-[#1f2937] mb-1.5">
           {t('opportunities.filters.tags') || 'Tags'} {selectedTags.length > 0 && `(${selectedTags.length})`}
         </h3>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-1.5">
           {availableTags.map((tag) => (
             <button
               key={tag.value}
               onClick={() => toggleTag(tag.value)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+              className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
                 selectedTags.includes(tag.value)
                   ? 'bg-[#5A9AB4] text-white'
                   : 'bg-[#F7F9F9] text-[#6b7280] hover:bg-[#E6EAEA]'
@@ -178,10 +178,10 @@ export default function OpportunityFilters({
 
       {/* Clear Filters */}
       {hasActiveFilters && (
-        <div className="pt-4 border-t border-[#E6EAEA]">
+        <div className="pt-3 border-t border-[#E6EAEA]">
           <button
             onClick={onClearFilters}
-            className="text-[#5A9AB4] hover:text-[#3E7C92] font-medium text-sm"
+            className="text-[#5A9AB4] hover:text-[#3E7C92] font-medium text-xs"
           >
             {t('opportunities.filters.clearAll') || 'Clear all filters'}
           </button>
