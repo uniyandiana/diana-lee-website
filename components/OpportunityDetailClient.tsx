@@ -3,6 +3,7 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { PortableText } from '@portabletext/react';
 import Link from "next/link";
+import { addOpportunityUTM } from '@/lib/utm';
 
 interface Opportunity {
   _id: string;
@@ -28,6 +29,9 @@ export default function OpportunityDetailClient({ opportunity }: OpportunityDeta
 
   const deadline = new Date(opportunity.deadline);
   const isExpired = deadline < new Date();
+
+  // Add UTM parameters to external URL for tracking
+  const trackedUrl = addOpportunityUTM(opportunity.url, opportunity.slug?.current || opportunity.slug || opportunity._id);
   const regionEmoji = opportunity.region === 'hk' ? '🇭🇰' : opportunity.region === 'uk' ? '🇬🇧' : '🌍';
 
   // Get region name from translations
@@ -170,7 +174,7 @@ export default function OpportunityDetailClient({ opportunity }: OpportunityDeta
                 {t('opportunities.detail.visitWebsiteDesc')}
               </p>
               <a
-                href={opportunity.url}
+                href={trackedUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block px-8 py-3 bg-[#5A9AB4] text-white font-semibold rounded-lg hover:bg-[#3E7C92] transition-colors"
