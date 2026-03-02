@@ -246,6 +246,16 @@
       "eventDate": "活動日期：",
       "deadline": "截止日期：",
       "learnMore": "了解更多 →"
+    },
+    "filters": {
+      "searchPlaceholder": "搜尋機會...",
+      "region": "地區",
+      "type": "類型",
+      "tags": "標籤",
+      "allRegions": "所有地區",
+      "allTypes": "所有類型",
+      "clearAll": "清除所有篩選",
+      "noResults": "找不到符合你的篩選條件的機會。"
     }
   },
   "contact": {

@@ -3,6 +3,8 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { PortableText } from '@portabletext/react';
 import Link from 'next/link';
+import { useState, useMemo } from 'react';
+import OpportunityFilters from './OpportunityFilters';
 
 interface Opportunity {
   _id: string;
@@ -29,6 +31,51 @@ export default function OpportunitiesClient({
 }: OpportunitiesClientProps) {
   const { t } = useLanguage();
 
+  // Filter states
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedRegion, setSelectedRegion] = useState('all');
+  const [selectedType, setSelectedType] = useState('all');
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
+
+  // Check if filters are active
+  const hasActiveFilters = searchQuery !== '' || selectedRegion !== 'all' || selectedType !== 'all' || selectedTags.length > 0;
+
+  // Clear all filters
+  const clearFilters = () => {
+    setSearchQuery('');
+    setSelectedRegion('all');
+    setSelectedType('all');
+    setSelectedTags([]);
+  };
+
+  // Filter opportunities
+  const filteredActiveOpportunities = useMemo(() => {
+    return activeOpportunities.filter(opp => {
+      // Search filter
+      if (searchQuery) {
+        const searchLower = searchQuery.toLowerCase();
+        const titleMatch = opp.title.toLowerCase().includes(searchLower);
+        const descriptionText = opp.description?.[0]?.children?.[0]?.text || '';
+        const descriptionMatch = descriptionText.toLowerCase().includes(searchLower);
+        if (!titleMatch && !descriptionMatch) return false;
+      }
+
+      // Region filter
+      if (selectedRegion !== 'all' && opp.region !== selectedRegion) return false;
+
+      // Type filter
+      if (selectedType !== 'all' && opp.type !== selectedType) return false;
+
+      // Tags filter (if any selected tags, opportunity must have at least one matching tag)
+      if (selectedTags.length > 0) {
+        const hasMatchingTag = selectedTags.some(tag => opp.tags?.includes(tag));
+        if (!hasMatchingTag) return false;
+      }
+
+      return true;
+    });
+  }, [activeOpportunities, searchQuery, selectedRegion, selectedType, selectedTags]);
+
   return (
     <div>
       {/* Hero */}
@@ -41,22 +88,50 @@ export default function OpportunitiesClient({
         </div>
       </section>
 
-      {/* Active Opportunities */}
+      {/* Filters & Active Opportunities */}
       <section className="section-padding bg-white">
         <div className="container-custom max-w-6xl">
+          {/* Filters */}
+          <div className="mb-8">
+            <OpportunityFilters
+              searchQuery={searchQuery}
+              setSearchQuery={setSearchQuery}
+              selectedRegion={selectedRegion}
+              setSelectedRegion={setSelectedRegion}
+              selectedType={selectedType}
+              setSelectedType={setSelectedType}
+              selectedTags={selectedTags}
+              setSelectedTags={setSelectedTags}
+              onClearFilters={clearFilters}
+              hasActiveFilters={hasActiveFilters}
+            />
+          </div>
+
+          {/* Results Header */}
           <h2 className="text-3xl font-bold mb-8 text-[#1f2937]">
-            {t('opportunities.currentTitle')} ({activeOpportunities.length})
+            {t('opportunities.currentTitle')} ({filteredActiveOpportunities.length})
           </h2>
 
-          {activeOpportunities.length === 0 ? (
+          {filteredActiveOpportunities.length === 0 ? (
             <div className="text-center py-16">
               <p className="text-[#6b7280] text-lg">
-                {t('opportunities.noOpportunities')}
+                {hasActiveFilters
+                  ? t('opportunities.filters.noResults')
+                  : t('opportunities.noOpportunities')
+                }
               </p>
+              {hasActiveFilters && (
+                <button
+                  onClick={clearFilters}
+                  className="mt-4 text-[#5A9AB4] hover:text-[#3E7C92] font-medium"
+                >
+                  {t('opportunities.filters.clearAll')}
+                </button>
+              )}
             </div>
           ) : (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {activeOpportunities.map((opportunity) => (
+              {filteredActiveOpportunities.map((opportunity) => (
                 <OpportunityCard key={opportunity._id} opportunity={opportunity} />
               ))}
             </div>
@@ -65,7 +140,7 @@ export default function OpportunitiesClient({
       </section>
 
       {/* Previous Opportunities */}
-      {expiredOpportunities.length > 0 && (
+      {!hasActiveFilters && expiredOpportunities.length > 0 && (
         <section className="section-padding bg-[#F7F9F9]">
           <div className="container-custom max-w-6xl">
             <h2 className="text-3xl font-bold mb-8 text-[#6b7280]">

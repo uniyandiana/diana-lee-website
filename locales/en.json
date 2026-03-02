@@ -246,6 +246,16 @@
       "eventDate": "Event Date:",
       "deadline": "Deadline:",
       "learnMore": "Learn More →"
+    },
+    "filters": {
+      "searchPlaceholder": "Search opportunities...",
+      "region": "Region",
+      "type": "Type",
+      "tags": "Tags",
+      "allRegions": "All Regions",
+      "allTypes": "All Types",
+      "clearAll": "Clear all filters",
+      "noResults": "No opportunities found matching your filters."
     }
   },
   "contact": {
