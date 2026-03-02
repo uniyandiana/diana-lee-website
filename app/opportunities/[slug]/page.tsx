@@ -49,6 +49,7 @@ export default async function OpportunityPage({ params }: { params: Promise<{ sl
       region,
       tags,
       deadline,
+      dateLabel,
       language,
       featured
     }`,

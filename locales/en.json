@@ -245,7 +245,9 @@
       "more": "more",
       "eventDate": "Event Date:",
       "deadline": "Deadline:",
-      "learnMore": "Learn More →"
+      "learnMore": "Learn More →",
+      "inEnglishOnly": "(in English only)",
+      "inChineseOnly": "(in Chinese only)"
     },
     "filters": {
       "searchPlaceholder": "Search opportunities...",

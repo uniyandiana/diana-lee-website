@@ -126,6 +126,21 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'dateLabel',
+      title: 'Date Label',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Deadline', value: 'deadline' },
+          { title: 'Event Date', value: 'event' },
+        ],
+        layout: 'radio',
+      },
+      initialValue: 'deadline',
+      description: 'Choose whether to display "Deadline" or "Event Date" on the opportunity',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: 'language',
       title: 'Language',
       type: 'string',
@@ -159,12 +174,12 @@ export default defineType({
     prepare(selection) {
       const { title, type, region, deadline, language } = selection
       const regionEmoji = region === 'hk' ? '🇭🇰' : region === 'uk' ? '🇬🇧' : '🌍'
-      const langEmoji = language === 'zh' ? '🇭🇰' : language === 'both' ? '🌐' : '🇬🇧'
+      const langLabel = language === 'zh' ? ' (中文)' : language === 'en' ? ' (EN)' : ' (Both)'
       const deadlineStr = deadline ? new Date(deadline).toLocaleDateString() : 'No deadline'
 
       return {
-        title: `${regionEmoji}${langEmoji} ${title}`,
-        subtitle: `${type} - ${deadlineStr}`,
+        title: `${regionEmoji} ${title}`,
+        subtitle: `${type}${langLabel} - ${deadlineStr}`,
       }
     },
   },

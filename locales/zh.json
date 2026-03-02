@@ -245,7 +245,9 @@
       "more": "更多",
       "eventDate": "活動日期：",
       "deadline": "截止日期：",
-      "learnMore": "了解更多 →"
+      "learnMore": "了解更多 →",
+      "inEnglishOnly": "（僅限英文）",
+      "inChineseOnly": "（僅限中文）"
     },
     "filters": {
       "searchPlaceholder": "搜尋機會...",

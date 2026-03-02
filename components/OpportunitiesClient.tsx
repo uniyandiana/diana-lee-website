@@ -16,6 +16,7 @@ interface Opportunity {
   region: string;
   tags: string[];
   deadline: string;
+  dateLabel: string;
   language: string;
   featured: boolean;
 }
@@ -214,9 +215,18 @@ function OpportunityCard({ opportunity, expired = false }: { opportunity: Opport
         </div>
 
         {/* Title */}
-        <h3 className="text-lg font-bold mb-2 text-[#1f2937] line-clamp-2">
+        <h3 className="text-lg font-bold mb-1 text-[#1f2937] line-clamp-2">
           {opportunity.title}
         </h3>
+
+        {/* Language Indicator */}
+        {opportunity.language === 'en' && (
+          <p className="text-xs text-[#6b7280] mb-2">{t('opportunities.labels.inEnglishOnly')}</p>
+        )}
+        {opportunity.language === 'zh' && (
+          <p className="text-xs text-[#6b7280] mb-2">{t('opportunities.labels.inChineseOnly')}</p>
+        )}
+        {opportunity.language === 'both' && <div className="mb-2"></div>}
 
         {/* Description */}
         <div className="text-[#6b7280] text-sm mb-4 line-clamp-3">
@@ -275,7 +285,7 @@ function OpportunityCard({ opportunity, expired = false }: { opportunity: Opport
         <div className="flex items-center justify-between mb-4">
           <div className="text-sm">
             <span className="text-[#6b7280]">
-              {opportunity.type === 'event' || opportunity.type === 'workshop'
+              {opportunity.dateLabel === 'event'
                 ? t('opportunities.labels.eventDate')
                 : t('opportunities.labels.deadline')}
             </span>

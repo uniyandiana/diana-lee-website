@@ -14,6 +14,7 @@ interface Opportunity {
   region: string;
   tags: string[];
   deadline: string;
+  dateLabel: string;
   language: string;
   featured: boolean;
 }
@@ -81,11 +82,20 @@ export default function OpportunityDetailClient({ opportunity }: OpportunityDeta
             )}
           </div>
 
-          <h1 className="mb-4">{opportunity.title}</h1>
+          <h1 className="mb-2">{opportunity.title}</h1>
+
+          {/* Language Indicator */}
+          {opportunity.language === 'en' && (
+            <p className="text-sm text-[#6b7280] mb-4">{t('opportunities.labels.inEnglishOnly')}</p>
+          )}
+          {opportunity.language === 'zh' && (
+            <p className="text-sm text-[#6b7280] mb-4">{t('opportunities.labels.inChineseOnly')}</p>
+          )}
+          {opportunity.language === 'both' && <div className="mb-4"></div>}
 
           <div className="flex items-center gap-4 text-[#6b7280] text-sm mb-4">
             <span>
-              {opportunity.type === 'event' || opportunity.type === 'workshop'
+              {opportunity.dateLabel === 'event'
                 ? t('opportunities.labels.eventDate')
                 : t('opportunities.labels.deadline')}{' '}
               <strong className={isExpired ? 'text-[#6b7280]' : 'text-[#5A9AB4]'}>

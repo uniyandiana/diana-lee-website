@@ -19,6 +19,7 @@ export default async function Opportunities() {
       region,
       tags,
       deadline,
+      dateLabel,
       language,
       featured
     }`,
