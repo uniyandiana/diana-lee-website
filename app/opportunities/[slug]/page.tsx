@@ -3,6 +3,9 @@ import { notFound } from "next/navigation";
 import StructuredData from '@/components/StructuredData';
 import OpportunityDetailClient from '@/components/OpportunityDetailClient';
 
+// Revalidate every 60 seconds (ISR)
+export const revalidate = 60;
+
 export async function generateStaticParams() {
   const opportunities = await sanityFetch({
     query: `*[_type == "opportunity"] { "slug": slug.current }`,

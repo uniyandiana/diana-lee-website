@@ -6,6 +6,9 @@ export const metadata = {
   description: "Curated opportunities for career development, entrepreneurship, and personal growth - events, competitions, grants, and resources across Hong Kong, UK, and internationally.",
 };
 
+// Revalidate every 60 seconds (ISR)
+export const revalidate = 60;
+
 export default async function Opportunities() {
   // Fetch all opportunities from Sanity
   const allOpportunities = await sanityFetch({
