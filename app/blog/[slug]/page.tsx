@@ -3,6 +3,7 @@ import { sanityFetch } from '@/lib/sanity';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
+import { PortableText } from '@portabletext/react';
 
 export async function generateStaticParams() {
   const markdownPosts = getAllBlogPosts();
@@ -37,7 +38,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         slug: sanityPosts.slug?.current || slug,
         readingTime: '5 min',
         publishedAt: sanityPosts.publishedAt || new Date().toISOString(),
-        content: sanityPosts.excerpt || '',
+        content: sanityPosts.content || sanityPosts.excerpt || '',
       };
     }
   }
@@ -76,7 +77,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         slug: sanityPost.slug?.current || slug,
         readingTime: '5 min',
         publishedAt: sanityPost.publishedAt || new Date().toISOString(),
-        content: sanityPost.excerpt || '',
+        content: sanityPost.content || sanityPost.excerpt || '',
       };
       isMarkdown = false;
     }
@@ -152,7 +153,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                 {post.content}
               </ReactMarkdown>
             ) : (
-              <div className="whitespace-pre-wrap">{post.content}</div>
+              <PortableText value={post.content} />
             )}
           </article>
 
