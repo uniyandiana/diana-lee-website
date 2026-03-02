@@ -150,10 +150,39 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           ">
             {isMarkdown ? (
               <ReactMarkdown>
-                {post.content}
+                {post.content as string}
               </ReactMarkdown>
             ) : (
-              <PortableText value={post.content} />
+              <PortableText
+                value={post.content as any}
+                components={{
+                  block: {
+                    normal: ({children}) => <p className="mb-6 leading-relaxed">{children}</p>,
+                    h1: ({children}) => <h1 className="text-4xl font-bold mt-12 mb-6">{children}</h1>,
+                    h2: ({children}) => <h2 className="text-3xl font-bold mt-10 mb-5 text-[#3E7C92] border-b border-[#F7F9F9] pb-3">{children}</h2>,
+                    h3: ({children}) => <h3 className="text-2xl font-bold mt-8 mb-4">{children}</h3>,
+                    h4: ({children}) => <h4 className="text-xl font-semibold mt-6 mb-3">{children}</h4>,
+                  },
+                  list: {
+                    bullet: ({children}) => <ul className="my-6 ml-6 space-y-3 list-disc">{children}</ul>,
+                    number: ({children}) => <ol className="my-6 ml-6 space-y-3 list-decimal">{children}</ol>,
+                  },
+                  listItem: {
+                    bullet: ({children}) => <li className="leading-relaxed">{children}</li>,
+                    number: ({children}) => <li className="leading-relaxed">{children}</li>,
+                  },
+                  marks: {
+                    strong: ({children}) => <strong className="font-semibold text-[#5A9AB4]">{children}</strong>,
+                    em: ({children}) => <em className="italic">{children}</em>,
+                    code: ({children}) => <code className="bg-[#F7F9F9] px-2 py-1 rounded text-sm font-mono">{children}</code>,
+                    link: ({children, value}) => (
+                      <a href={value?.href} className="text-[#5A9AB4] hover:text-[#3E7C92] underline" target="_blank" rel="noopener noreferrer">
+                        {children}
+                      </a>
+                    ),
+                  },
+                }}
+              />
             )}
           </article>
 
