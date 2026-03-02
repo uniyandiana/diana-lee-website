@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
 import { PortableText } from '@portabletext/react';
+import StructuredData from '@/components/StructuredData';
 
 export async function generateStaticParams() {
   const markdownPosts = getAllBlogPosts();
@@ -87,8 +88,32 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     notFound();
   }
 
+  // Structured data for blog post
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.publishedAt,
+    dateModified: post.publishedAt,
+    author: {
+      '@type': 'Person',
+      name: 'Diana Lee',
+      url: 'https://diana-lee.com',
+    },
+    publisher: {
+      '@type': 'Person',
+      name: 'Diana Lee',
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://diana-lee.com/blog/${post.slug}`,
+    },
+  };
+
   return (
     <div>
+      <StructuredData data={structuredData} />
       {/* Hero */}
       <section className="section-padding bg-gradient-to-br from-[#F7F9F9] to-[#FFFEFA]">
         <div className="container-custom max-w-4xl">
