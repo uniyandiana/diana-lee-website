@@ -7,6 +7,9 @@ export const metadata = {
   description: "Insights and reflections on career development, entrepreneurship, and personal growth.",
 };
 
+// Revalidate every 60 seconds (ISR)
+export const revalidate = 60;
+
 export default async function BlogPage() {
   // Fetch blog posts from markdown files
   const markdownPosts = getAllBlogPosts();

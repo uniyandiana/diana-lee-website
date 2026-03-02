@@ -6,6 +6,9 @@ import ReactMarkdown from 'react-markdown';
 import { PortableText } from '@portabletext/react';
 import StructuredData from '@/components/StructuredData';
 
+// Revalidate every 60 seconds (ISR)
+export const revalidate = 60;
+
 export async function generateStaticParams() {
   const markdownPosts = getAllBlogPosts();
 

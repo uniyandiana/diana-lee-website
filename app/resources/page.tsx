@@ -9,6 +9,9 @@ export const metadata = {
   description: "Free resources, insights, and tools for career development and entrepreneurship.",
 };
 
+// Revalidate every 60 seconds (ISR)
+export const revalidate = 60;
+
 export default async function Resources() {
   // Fetch blog posts from markdown files
   const markdownPosts = getAllBlogPosts();
