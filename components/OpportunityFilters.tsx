@@ -66,7 +66,7 @@ export default function OpportunityFilters({
   };
 
   return (
-    <div className="mb-8 space-y-6">
+    <div className="space-y-4">
       {/* Search */}
       <div>
         <input
@@ -74,13 +74,13 @@ export default function OpportunityFilters({
           placeholder={t('opportunities.filters.searchPlaceholder') || 'Search opportunities...'}
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full px-4 py-3 border border-[#E6EAEA] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#5A9AB4] focus:border-transparent"
+          className="w-full px-4 py-2.5 border border-[#E6EAEA] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#5A9AB4] focus:border-transparent"
         />
       </div>
 
       {/* Region Filter */}
       <div>
-        <h3 className="text-sm font-semibold text-[#1f2937] mb-3">
+        <h3 className="text-sm font-semibold text-[#1f2937] mb-2">
           {t('opportunities.filters.region') || 'Region'}
         </h3>
         <div className="flex flex-wrap gap-2">
@@ -102,7 +102,7 @@ export default function OpportunityFilters({
 
       {/* Type Filter */}
       <div>
-        <h3 className="text-sm font-semibold text-[#1f2937] mb-3">
+        <h3 className="text-sm font-semibold text-[#1f2937] mb-2">
           {t('opportunities.filters.type') || 'Type'}
         </h3>
         <div className="flex flex-wrap gap-2">
@@ -124,7 +124,7 @@ export default function OpportunityFilters({
 
       {/* Tags Filter */}
       <div>
-        <h3 className="text-sm font-semibold text-[#1f2937] mb-3">
+        <h3 className="text-sm font-semibold text-[#1f2937] mb-2">
           {t('opportunities.filters.tags') || 'Tags'} {selectedTags.length > 0 && `(${selectedTags.length})`}
         </h3>
         <div className="flex flex-wrap gap-2">

@@ -79,20 +79,20 @@ export default function OpportunitiesClient({
   return (
     <div>
       {/* Hero */}
-      <section className="section-padding bg-gradient-to-br from-[#F7F9F9] to-[#FFFEFA]">
+      <section className="py-12 md:py-16 bg-gradient-to-br from-[#F7F9F9] to-[#FFFEFA]">
         <div className="container-custom max-w-6xl">
-          <h1 className="mb-4">{t('opportunities.hero.title')}</h1>
-          <p className="text-xl text-[#6b7280] max-w-3xl">
+          <h1 className="mb-3">{t('opportunities.hero.title')}</h1>
+          <p className="text-lg md:text-xl text-[#6b7280] max-w-3xl">
             {t('opportunities.hero.subtitle')}
           </p>
         </div>
       </section>
 
       {/* Filters & Active Opportunities */}
-      <section className="section-padding bg-white">
+      <section className="py-8 md:py-12 bg-white">
         <div className="container-custom max-w-6xl">
           {/* Filters */}
-          <div className="mb-8">
+          <div className="mb-6">
             <OpportunityFilters
               searchQuery={searchQuery}
               setSearchQuery={setSearchQuery}
@@ -108,7 +108,7 @@ export default function OpportunitiesClient({
           </div>
 
           {/* Results Header */}
-          <h2 className="text-3xl font-bold mb-8 text-[#1f2937]">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-[#1f2937]">
             {t('opportunities.currentTitle')} ({filteredActiveOpportunities.length})
           </h2>
 
@@ -141,9 +141,9 @@ export default function OpportunitiesClient({
 
       {/* Previous Opportunities */}
       {!hasActiveFilters && expiredOpportunities.length > 0 && (
-        <section className="section-padding bg-[#F7F9F9]">
+        <section className="py-8 md:py-12 bg-[#F7F9F9]">
           <div className="container-custom max-w-6xl">
-            <h2 className="text-3xl font-bold mb-8 text-[#6b7280]">
+            <h2 className="text-2xl md:text-3xl font-bold mb-6 text-[#6b7280]">
               {t('opportunities.previousTitle')} ({expiredOpportunities.length})
             </h2>
 
