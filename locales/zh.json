@@ -256,6 +256,16 @@
       "allTypes": "所有類型",
       "clearAll": "清除所有篩選",
       "noResults": "找不到符合你的篩選條件的機會。"
+    },
+    "detail": {
+      "backToOpportunities": "← 返回機會列表",
+      "backToAll": "← 返回所有機會",
+      "readyToApply": "準備好申請了嗎？",
+      "visitWebsiteDesc": "瀏覽官方網站以了解更多資訊並提交申請",
+      "visitWebsite": "瀏覽官方網站 →",
+      "expired": "此機會已過期",
+      "checkOthers": "查看其他當前機會",
+      "viewAllOpportunities": "查看所有機會"
     }
   },
   "contact": {

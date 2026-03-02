@@ -256,6 +256,16 @@
       "allTypes": "All Types",
       "clearAll": "Clear all filters",
       "noResults": "No opportunities found matching your filters."
+    },
+    "detail": {
+      "backToOpportunities": "← Back to Opportunities",
+      "backToAll": "← Back to all opportunities",
+      "readyToApply": "Ready to apply?",
+      "visitWebsiteDesc": "Visit the official website to learn more and submit your application",
+      "visitWebsite": "Visit Official Website →",
+      "expired": "This opportunity has expired",
+      "checkOthers": "Check out other current opportunities",
+      "viewAllOpportunities": "View All Opportunities"
     }
   },
   "contact": {
