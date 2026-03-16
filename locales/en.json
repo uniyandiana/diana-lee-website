@@ -88,6 +88,12 @@
         "universityScholarship": "University Service Scholarship"
       }
     },
+    "badges": {
+      "title": "Digital Badges & Credentials",
+      "ccsp": "CCSP – Certified Career Services Provider",
+      "abp": "ABP Business Psychology",
+      "rcdp": "Registered Career Development Professional"
+    },
     "philosophy": {
       "title": "How I Work",
       "quote": "Career development and entrepreneurship are not linear ladders—they are evolving journeys shaped by identity, context, and courage.",

@@ -218,6 +218,51 @@ export default function About() {
         </div>
       </section>
 
+      {/* Digital Badges */}
+      <section className="py-12 md:py-16 bg-white border-t border-[#E6EAEA]">
+        <div className="container-custom max-w-6xl">
+          <h2 className="text-center mb-10">{t('about.badges.title')}</h2>
+          <div className="flex flex-wrap justify-center gap-8 md:gap-12">
+            <div className="flex flex-col items-center gap-3">
+              <div className="w-28 h-28 relative flex items-center justify-center">
+                <Image
+                  src="/images/Badges/CCSP Badge.png"
+                  alt="CCSP Badge"
+                  fill
+                  sizes="112px"
+                  className="object-contain"
+                />
+              </div>
+              <p className="text-sm text-center text-[#4A4A4A] font-medium max-w-[140px]">{t('about.badges.ccsp')}</p>
+            </div>
+            <div className="flex flex-col items-center gap-3">
+              <div className="w-28 h-28 relative flex items-center justify-center">
+                <Image
+                  src="/images/Badges/ABP Business Psychology Badge.png"
+                  alt="ABP Business Psychology Badge"
+                  fill
+                  sizes="112px"
+                  className="object-contain"
+                />
+              </div>
+              <p className="text-sm text-center text-[#4A4A4A] font-medium max-w-[140px]">{t('about.badges.abp')}</p>
+            </div>
+            <div className="flex flex-col items-center gap-3">
+              <div className="w-28 h-28 relative flex items-center justify-center">
+                <Image
+                  src="/images/Badges/Registered-Career-Development-Professional-logo.jpg"
+                  alt="Registered Career Development Professional"
+                  fill
+                  sizes="112px"
+                  className="object-contain"
+                />
+              </div>
+              <p className="text-sm text-center text-[#4A4A4A] font-medium max-w-[140px]">{t('about.badges.rcdp')}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Philosophy */}
       <section className="py-12 md:py-16 bg-white">
         <div className="container-custom max-w-4xl text-center">

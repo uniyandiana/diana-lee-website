@@ -88,6 +88,12 @@
         "universityScholarship": "大學服務獎學金"
       }
     },
+    "badges": {
+      "title": "專業認證徽章",
+      "ccsp": "CCSP – 認證職涯服務提供者",
+      "abp": "ABP 商業心理學",
+      "rcdp": "註冊職涯發展專業人員"
+    },
     "philosophy": {
       "title": "工作思維",
       "quote": ["職涯發展和創業並非直線的階梯——", "它們是由身份、處境和勇氣所塑造的不斷演變的旅程。"],
