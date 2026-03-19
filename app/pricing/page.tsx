@@ -6,54 +6,51 @@ import { useLanguage } from '@/contexts/LanguageContext';
 
 const pricingTiers = [
   {
-    name: { en: 'Single Session', zh: '單次課程' },
+    name: { en: 'Single Session', zh: '單次' },
     sessions: 1,
-    hkd: 950,
-    gbp: 90,
-    perSession: { hkd: 950, gbp: 90 },
+    original: { hkd: 600, gbp: 60 },
+    discounted: { hkd: 450, gbp: 45 },
     highlight: false,
-    badge: null,
+    badge: { en: 'Limited offer', zh: '限時優惠' },
     description: {
-      en: 'Perfect for exploring if coaching is right for you, or tackling a specific challenge.',
-      zh: '適合初次嘗試，或針對特定議題尋求突破。',
+      en: 'Perfect for exploring if coaching is right for you, or working through a specific challenge.',
+      zh: '適合初次嘗試，或針對某一具體議題尋求突破。',
     },
     includes: {
-      en: ['60-minute 1:1 session', 'Pre-session questionnaire', 'Session notes & action plan'],
-      zh: ['60分鐘1對1課程', '課前問卷', '課後筆記及行動計劃'],
+      en: ['50-min 1:1 session', 'Pre-session intake form', 'Notes & action plan after each session'],
+      zh: ['50分鐘1對1', '諮詢前填寫問卷', '每節後提供筆記及行動計劃'],
     },
   },
   {
-    name: { en: '3-Session Pack', zh: '3堂套裝' },
+    name: { en: '3-Session Pack', zh: '3節套裝' },
     sessions: 3,
-    hkd: 2700,
-    gbp: 250,
-    perSession: { hkd: 900, gbp: 83 },
+    original: { hkd: 1600, gbp: 160 },
+    discounted: { hkd: 1200, gbp: 120 },
     highlight: false,
-    badge: { en: 'Save 5%', zh: '節省5%' },
+    badge: { en: 'Limited offer', zh: '限時優惠' },
     description: {
       en: 'Build momentum over three focused sessions with a clear goal and ongoing support.',
-      zh: '透過三次有目標的課程，建立持續動力。',
+      zh: '透過三節有目標的深度對話，建立持續動力。',
     },
     includes: {
-      en: ['3 × 60-minute 1:1 sessions', 'Pre-session questionnaire', 'Session notes & action plan', 'Email support between sessions'],
-      zh: ['3 × 60分鐘1對1課程', '課前問卷', '課後筆記及行動計劃', '課堂之間電郵支援'],
+      en: ['3 × 50-min 1:1 sessions', 'Pre-session intake form', 'Notes & action plan after each session', 'Email support between sessions'],
+      zh: ['3 × 50分鐘1對1', '諮詢前填寫問卷', '每節後提供筆記及行動計劃', '兩節之間電郵支援'],
     },
   },
   {
-    name: { en: '6-Session Pack', zh: '6堂套裝' },
-    sessions: 6,
-    hkd: 5200,
-    gbp: 480,
-    perSession: { hkd: 867, gbp: 80 },
+    name: { en: '5-Session Pack', zh: '5節套裝' },
+    sessions: 5,
+    original: { hkd: 2800, gbp: 280 },
+    discounted: { hkd: 2100, gbp: 210 },
     highlight: true,
     badge: { en: 'Best Value', zh: '最超值' },
     description: {
-      en: 'Deep, sustained transformation. Ideal for career transitions, startup journeys, or long-term goals.',
-      zh: '深度持續的轉化，適合職涯轉換、創業旅程或長期目標。',
+      en: 'Deep, sustained progress. Ideal for career transitions, startup journeys, or long-term goals.',
+      zh: '深度持續的成長，適合職涯轉換、創業歷程或長遠目標。',
     },
     includes: {
-      en: ['6 × 60-minute 1:1 sessions', 'Pre-session questionnaire', 'Session notes & action plan', 'Email support between sessions', 'Progress review mid-pack'],
-      zh: ['6 × 60分鐘1對1課程', '課前問卷', '課後筆記及行動計劃', '課堂之間電郵支援', '中途進度回顧'],
+      en: ['5 × 50-min 1:1 sessions', 'Pre-session intake form', 'Notes & action plan after each session', 'Email support between sessions', 'Mid-pack progress check-in'],
+      zh: ['5 × 50分鐘1對1', '諮詢前填寫問卷', '每節後提供筆記及行動計劃', '兩節之間電郵支援', '中途進度回顧'],
     },
   },
 ];
@@ -65,8 +62,8 @@ const services = [
     title: { en: '1:1 Career Facilitation', zh: '1對1職涯引導' },
     subtitle: { en: 'Navigate your career with clarity', zh: '清晰導航你的職涯方向' },
     description: {
-      en: 'Whether you\'re exploring career options, navigating a transition, or seeking clarity on your professional direction — these sessions are designed around you.',
-      zh: '無論你正在探索職涯選項、應對轉換期，還是尋求職業方向的清晰度，每一節課程都圍繞你的需求而設計。',
+      en: 'Whether you\'re exploring career options, navigating a transition, or seeking clarity on your professional direction — each session is designed around you.',
+      zh: '無論你正在探索職涯選項、面對轉換期，還是尋求職業方向的清晰度，每一節都圍繞你的需求而設計。',
     },
     topics: {
       en: ['Career exploration & direction', 'Job search strategy & personal branding', 'Interview coaching & offer negotiation', 'Work-life integration & strengths discovery'],
@@ -77,7 +74,7 @@ const services = [
     id: 'startup',
     icon: '🚀',
     title: { en: '1:1 Startup Coaching', zh: '1對1創業輔導' },
-    subtitle: { en: 'Build your venture with confidence', zh: '自信地建立你的事業' },
+    subtitle: { en: 'Build your venture with confidence', zh: '自信地推進你的事業' },
     description: {
       en: 'For founders and aspiring entrepreneurs who want structured thinking, accountability, and a sounding board to move their idea or business forward.',
       zh: '為創辦人及有志創業者提供結構化思考、問責機制，以及推進想法或業務的支援。',
@@ -95,15 +92,8 @@ export default function Pricing() {
 
   const zh = language === 'zh';
 
-  const formatPrice = (hkd: number, gbp: number) => {
-    if (currency === 'hkd') return `HK$${hkd.toLocaleString()}`;
-    return `£${gbp}`;
-  };
-
-  const formatPerSession = (hkd: number, gbp: number) => {
-    if (currency === 'hkd') return `HK$${hkd.toLocaleString()}`;
-    return `£${gbp}`;
-  };
+  const fmt = (hkd: number, gbp: number) =>
+    currency === 'hkd' ? `HK$${hkd.toLocaleString()}` : `£${gbp}`;
 
   return (
     <div>
@@ -111,11 +101,11 @@ export default function Pricing() {
       <section className="py-12 md:py-16 bg-gradient-to-br from-[#FFFEFA] to-[#F7F9F9]">
         <div className="container-custom max-w-4xl text-center">
           <h1 className="mb-4 text-3xl sm:text-4xl md:text-5xl">
-            {zh ? '1對1課程收費' : '1:1 Session Pricing'}
+            {zh ? '1對1收費一覽' : '1:1 Session Pricing'}
           </h1>
           <p className="text-lg sm:text-xl text-[#6b7280] mb-6">
             {zh
-              ? '每一節課程都以你為中心 — 按需求選擇最合適的方案'
+              ? '每一節都以你為中心 — 按需求選擇最合適的方案'
               : 'Every session is centred around you — choose the plan that fits your needs'}
           </p>
           <div className="inline-flex items-center bg-white border border-[#E6EAEA] rounded-full p-1 shadow-sm">
@@ -148,8 +138,8 @@ export default function Pricing() {
         <div className="container-custom max-w-4xl py-4 text-center">
           <p className="text-sm sm:text-base text-[#168E8C] font-medium">
             {zh
-              ? '✨ 首次諮詢免費 — 預約30分鐘免費體驗，了解是否適合你'
-              : '✨ First consultation is free — book a 30-min trial to see if we\'re a good fit'}
+              ? '✨ 首次諮詢免費 — 先預約20分鐘免費1:1諮詢，了解是否適合你'
+              : '✨ First consultation is free — book a 20-min 1:1 intro call to see if we\'re a good fit'}
             {' '}
             <a
               href="https://calendly.com/dianaleetw/30min"
@@ -167,7 +157,9 @@ export default function Pricing() {
       <section className="py-12 md:py-16 bg-white">
         <div className="container-custom max-w-5xl">
           <p className="text-center text-sm text-[#6b7280] mb-8">
-            {zh ? '以下收費適用於職涯引導及創業輔導課程' : 'Pricing applies to both Career Facilitation and Startup Coaching sessions'}
+            {zh
+              ? '以下收費適用於職涯引導及創業輔導'
+              : 'Pricing applies to both Career Facilitation and Startup Coaching'}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {pricingTiers.map((tier) => (
@@ -180,28 +172,28 @@ export default function Pricing() {
                 }`}
               >
                 {tier.badge && (
-                  <div className={`absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-bold ${
-                    tier.highlight ? 'bg-[#21B3B1] text-white' : 'bg-[#FAF5EC] text-[#4A4A4A] border border-[#E6EAEA]'
+                  <div className={`absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-bold whitespace-nowrap ${
+                    tier.highlight
+                      ? 'bg-[#21B3B1] text-white'
+                      : 'bg-[#FAF5EC] text-[#4A4A4A] border border-[#E6EAEA]'
                   }`}>
                     {zh ? tier.badge.zh : tier.badge.en}
                   </div>
                 )}
 
-                <h3 className="text-lg font-bold text-[#1f2937] mb-1">
+                <h3 className="text-lg font-bold text-[#1f2937] mb-3 mt-1">
                   {zh ? tier.name.zh : tier.name.en}
                 </h3>
 
-                <div className="mb-1">
+                {/* Price with strikethrough original */}
+                <div className="mb-1 flex items-baseline gap-2">
                   <span className="text-3xl font-bold text-[#21B3B1]">
-                    {formatPrice(tier.hkd, tier.gbp)}
+                    {fmt(tier.discounted.hkd, tier.discounted.gbp)}
+                  </span>
+                  <span className="text-base text-[#9ca3af] line-through">
+                    {fmt(tier.original.hkd, tier.original.gbp)}
                   </span>
                 </div>
-
-                {tier.sessions > 1 && (
-                  <p className="text-xs text-[#6b7280] mb-3">
-                    {zh ? '即' : ''} {formatPerSession(tier.perSession.hkd, tier.perSession.gbp)}{zh ? '/堂' : ' per session'}
-                  </p>
-                )}
 
                 <p className="text-sm text-[#6b7280] mb-4 leading-relaxed">
                   {zh ? tier.description.zh : tier.description.en}
@@ -228,7 +220,7 @@ export default function Pricing() {
                       : 'bg-white text-[#21B3B1] border-2 border-[#21B3B1] hover:bg-[#21B3B1] hover:text-white'
                   }`}
                 >
-                  {zh ? '預約體驗課程' : 'Book a Trial First'}
+                  {zh ? '預約免費1:1 20分鐘諮詢' : 'Book a Free 20-min Intro Call'}
                 </a>
               </div>
             ))}
@@ -236,7 +228,7 @@ export default function Pricing() {
 
           <p className="text-center text-xs text-[#6b7280] mt-6">
             {zh
-              ? '* 付款詳情將在確認預約後提供。如有任何問題，請透過聯絡頁面查詢。'
+              ? '* 付款詳情將在確認預約後提供。如有任何問題，歡迎透過聯絡頁面查詢。'
               : '* Payment details will be provided upon booking confirmation. Questions? Reach out via the contact page.'}
           </p>
         </div>
@@ -285,8 +277,8 @@ export default function Pricing() {
           </h2>
           <p className="text-lg mb-8 opacity-90">
             {zh
-              ? '先預約免費30分鐘體驗，了解我們是否合拍 — 完全沒有壓力。'
-              : 'Start with a free 30-minute trial — no pressure, just a conversation to see if we\'re a good fit.'}
+              ? '先預約免費20分鐘1:1諮詢，了解我們是否合拍 — 完全沒有壓力。'
+              : 'Start with a free 20-min intro call — no pressure, just a conversation to see if we\'re a good fit.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -295,7 +287,7 @@ export default function Pricing() {
               rel="noopener noreferrer"
               className="px-8 py-4 bg-white text-[#21B3B1] rounded-lg font-semibold hover:bg-[#FFFEFA] hover:text-[#21B3B1] transition-all duration-300"
             >
-              {zh ? '預約免費體驗' : 'Book Free Trial'}
+              {zh ? '預約免費1:1 20分鐘諮詢' : 'Book Free 20-min Intro Call'}
             </a>
             <Link
               href="/contact"
