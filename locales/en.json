@@ -200,6 +200,8 @@
     },
     "cta": {
       "bookSession": "Book a Session via Calendly",
+      "bookTrial": "Book a Free Trial via Calendly",
+      "explore": "Explore 1:1 Sessions",
       "enquire": "Enquire About Our Services",
       "title": "Ready to Work Together?",
       "subtitle": "Research-informed • Human-centred • Experiential • Action-oriented",

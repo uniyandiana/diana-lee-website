@@ -199,15 +199,21 @@ export default function Services() {
           </div>
 
           {/* CTA for Individuals */}
-          <div className="mt-12 text-center">
+          <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
               href="https://calendly.com/dianaleetw/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-8 py-4 bg-[#5A9AB4] text-white rounded-lg hover:bg-[#3E7C92] transition-all duration-300 font-semibold"
+              className="inline-block px-8 py-4 bg-white text-[#5A9AB4] border-2 border-[#5A9AB4] rounded-lg hover:bg-[#5A9AB4] hover:text-white transition-all duration-300 font-semibold"
             >
-              {t('services.cta.bookSession')}
+              {t('services.cta.bookTrial')}
             </a>
+            <Link
+              href="/pricing"
+              className="inline-block px-8 py-4 bg-[#5A9AB4] text-white border-2 border-[#5A9AB4] rounded-lg hover:bg-[#3E7C92] hover:border-[#3E7C92] hover:text-white transition-all duration-300 font-semibold"
+            >
+              {t('services.cta.explore')}
+            </Link>
           </div>
         </div>
       </section>
