@@ -259,6 +259,18 @@ export default function About() {
               </div>
               <p className="text-sm text-center text-[#4A4A4A] font-medium max-w-[140px]">{t('about.badges.rcdp')}</p>
             </div>
+            <div className="flex flex-col items-center gap-3">
+              <div className="w-28 h-28 relative flex items-center justify-center">
+                <Image
+                  src="/images/Badges/GCDF Badge.png"
+                  alt="GCDF Badge"
+                  fill
+                  sizes="112px"
+                  className="object-contain"
+                />
+              </div>
+              <p className="text-sm text-center text-[#4A4A4A] font-medium max-w-[140px]">{t('about.badges.gcdf')}</p>
+            </div>
           </div>
         </div>
       </section>
