@@ -24,8 +24,8 @@ const pricingTiers = [
   {
     name: { en: '3-Session Pack', zh: '3節套裝' },
     sessions: 3,
-    original: { hkd: 1600, gbp: 160 },
-    discounted: { hkd: 1200, gbp: 120 },
+    original: { hkd: 1350, gbp: 135 },
+    discounted: { hkd: 1250, gbp: 125 },
     highlight: false,
     badge: { en: 'Limited offer', zh: '限時優惠' },
     description: {
@@ -40,8 +40,8 @@ const pricingTiers = [
   {
     name: { en: '5-Session Pack', zh: '5節套裝' },
     sessions: 5,
-    original: { hkd: 2800, gbp: 280 },
-    discounted: { hkd: 2100, gbp: 210 },
+    original: { hkd: 2250, gbp: 225 },
+    discounted: { hkd: 2000, gbp: 200 },
     highlight: true,
     badge: { en: 'Best Value', zh: '最超值' },
     description: {
