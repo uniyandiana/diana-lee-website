@@ -201,7 +201,7 @@ export default function Services() {
           {/* CTA for Individuals */}
           <div className="mt-12 text-center">
             <a
-              href="https://calendly.com/yourusername"
+              href="https://calendly.com/dianaleetw/30min"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-8 py-4 bg-[#5A9AB4] text-white rounded-lg hover:bg-[#3E7C92] transition-all duration-300 font-semibold"
