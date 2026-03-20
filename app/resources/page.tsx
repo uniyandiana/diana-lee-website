@@ -65,60 +65,68 @@ export default async function Resources() {
     query: `*[_type == "resource"] | order(_createdAt desc) {
       _id,
       title,
+      "slug": slug.current,
       type,
       category,
       description,
-      file,
-      externalLink
+      externalLink,
+      "fileUrl": file.asset->url,
     }`,
   });
 
-  // Free downloadable resources (hardcoded)
+  // Free downloadable resources (hardcoded — will be replaced once migrated to Sanity)
   const freeResources = [
     {
       _id: "career-clarity-workbook",
+      slug: "career-clarity-workbook",
       title: "Career Clarity Workbook",
-      type: "Workbook",
-      category: "Career Development",
+      type: "pdf",
+      category: "career",
       description: "A comprehensive self-reflection guide to identify your values, strengths, and ideal career direction.",
       downloadLink: "/resources/01-career-clarity-workbook.pdf"
     },
     {
-      _id: "entrepreneurial-readiness",
+      _id: "entrepreneurial-readiness-self-assessment",
+      slug: "entrepreneurial-readiness-self-assessment",
       title: "Entrepreneurial Readiness Self-Assessment",
-      type: "Assessment",
-      category: "Entrepreneurship",
+      type: "pdf",
+      category: "entrepreneurship",
       description: "150-point evaluation across 6 key areas to determine if you're ready to start a business.",
       downloadLink: "/resources/02-entrepreneurial-readiness-self-assessment.pdf"
     },
     {
-      _id: "90-day-transition-roadmap",
+      _id: "90-day-career-transition-roadmap",
+      slug: "90-day-career-transition-roadmap",
       title: "90-Day Career Transition Roadmap",
-      type: "Roadmap",
-      category: "Career Development",
+      type: "pdf",
+      category: "career",
       description: "Month-by-month action plan with specific tasks, metrics, and milestones for career transitions.",
       downloadLink: "/resources/03-90-day-career-transition-roadmap.pdf"
     },
     {
-      _id: "values-strengths-guide",
+      _id: "values-strengths-discovery-guide",
+      slug: "values-strengths-discovery-guide",
       title: "Values & Strengths Discovery Guide",
-      type: "Guide",
-      category: "Self-Discovery",
+      type: "pdf",
+      category: "career",
       description: "Practical exercises to identify your core values and natural strengths for better career alignment.",
       downloadLink: "/resources/04-values-and-strengths-discovery-guide.pdf"
     },
     {
-      _id: "startup-validation-checklist",
+      _id: "startup-idea-validation-checklist",
+      slug: "startup-idea-validation-checklist",
       title: "Startup Idea Validation Checklist",
-      type: "Checklist",
-      category: "Entrepreneurship",
+      type: "pdf",
+      category: "entrepreneurship",
       description: "15-checkpoint framework to validate your startup idea before investing time and money in building.",
       downloadLink: "/resources/05-startup-idea-validation-checklist.pdf"
     }
   ];
 
-  // Combine free resources with Sanity resources
-  const resources = [...freeResources, ...sanityResources];
+  // Sanity resources take priority — remove hardcoded duplicates by slug
+  const sanitySlugSet = new Set(sanityResources.map((r: any) => r.slug))
+  const filteredHardcoded = freeResources.filter((r) => !sanitySlugSet.has(r.slug))
+  const resources = [...filteredHardcoded, ...sanityResources];
 
   return (
     <div>

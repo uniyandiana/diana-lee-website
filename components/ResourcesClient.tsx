@@ -270,35 +270,25 @@ export default function ResourcesClient({
           {/* Resource Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {filteredResources.length > 0 ? (
-              filteredResources.map((resource: any) => (
-                <div
+              filteredResources.map((resource: any) => {
+                const slug = resource.slug?.current || resource.slug || resource._id
+                return (
+                <Link
                   key={resource._id}
-                  className="bg-white p-6 rounded-xl border border-[#F7F9F9] hover:shadow-md transition-shadow"
+                  href={`/resources/${slug}`}
+                  className="group bg-white p-6 rounded-xl border border-[#F7F9F9] hover:shadow-md transition-shadow flex flex-col"
                 >
-                  <span className="inline-block px-3 py-1 bg-[#F7F9F9] text-[#5A9AB4] text-xs font-semibold rounded-full mb-3">
+                  <span className="inline-block px-3 py-1 bg-[#F7F9F9] text-[#5A9AB4] text-xs font-semibold rounded-full mb-3 self-start">
                     {resource.type}
                   </span>
-                  <h3 className="text-lg font-bold mb-2 text-[#1f2937]">{resource.title}</h3>
-                  <p className="text-sm text-[#6b7280] mb-4">{resource.description}</p>
-                  <a
-                    href={resource.downloadLink || resource.externalLink || '#'}
-                    download={resource.downloadLink ? true : undefined}
-                    target={resource.downloadLink ? undefined : '_blank'}
-                    rel={resource.downloadLink ? undefined : 'noopener noreferrer'}
-                    className="text-[#5A9AB4] font-semibold hover:text-[#3E7C92] transition-colors text-sm inline-flex items-center gap-1"
-                  >
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                      />
-                    </svg>
-                    Download
-                  </a>
-                </div>
-              ))
+                  <h3 className="text-lg font-bold mb-2 text-[#1f2937] group-hover:text-[#21B3B1] transition-colors">{resource.title}</h3>
+                  <p className="text-sm text-[#6b7280] mb-4 flex-1 line-clamp-3">{resource.description}</p>
+                  <span className="text-[#21B3B1] font-semibold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                    View Resource →
+                  </span>
+                </Link>
+                )
+              })
             ) : (
               <div className="col-span-3 text-center p-12 bg-white rounded-xl border border-[#F7F9F9]">
                 <p className="text-[#6b7280]">No resources found matching your filters.</p>
