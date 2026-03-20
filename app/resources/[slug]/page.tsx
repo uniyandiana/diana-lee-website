@@ -82,8 +82,9 @@ async function getResource(slug: string) {
   return null
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const resource = await getResource(params.slug)
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params
+  const resource = await getResource(slug)
   if (!resource) return { title: 'Resource Not Found | Diana Lee' }
   return {
     title: `${resource.title} | Diana Lee`,
@@ -91,8 +92,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   }
 }
 
-export default async function ResourceDetailPage({ params }: { params: { slug: string } }) {
-  const resource = await getResource(params.slug)
+export default async function ResourceDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const resource = await getResource(slug)
   if (!resource) notFound()
 
   const downloadUrl = resource.downloadLink || resource.fileUrl || resource.externalLink
